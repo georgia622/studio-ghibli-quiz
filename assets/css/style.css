@@ -48,6 +48,10 @@ body {
     font-weight: bold;
 }
 
+button:hover {
+    background-color: rgb(255, 206, 133);
+}
+
 .align-right {
     display: flex;
     justify-self: right;
@@ -68,6 +72,20 @@ body {
     justify-content: space-between;
 }
 
+.icon-styling {
+    font-size: 35px;
+    padding: 10px;
+    margin: 10px;
+}
+
+#true:hover {
+   color: #5c996e;
+}
+
+#false:hover {
+   color: #ed5d5d;
+}
+
 /*To hide section when no longer needed on screen*/
 .hide {
     display: none;
@@ -81,5 +99,5 @@ button hover effect tutorial from https://www.30secondsofcode.org/*/
 
 .button-grow:hover {
     transform: scale(1.1);
-    background-color: rgb(255, 206, 133);
+    
 }
