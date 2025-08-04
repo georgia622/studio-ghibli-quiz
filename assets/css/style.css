@@ -11,12 +11,12 @@ body {
     font-family: "Poppins", sans-serif;
     background: url(../images/background-image) no-repeat center center fixed;
     background-size: cover;
+    color: #f1f9f6;
 }
 
 .heading-styling {
     font-family: "DM Serif Display", serif;
     font-weight: lighter;
-    color: #f1f9f6;
 }
 
 .container-styling {
@@ -25,12 +25,22 @@ body {
     width: 40%;
     height: 40%;
     text-align: center;
-    background-color: rgb(28, 52, 47, 0.7);
-    border-radius: 5%;
+    background-color: rgb(28, 52, 47, 0.9);
+    border-radius: 12px;
     /*Code tutorial from stackoverflow*/
     position: absolute;
     top: 50%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
+}
+
+.btn-styling {
+    color: #0e1b18;
+    background-color: #f1f9f6;
+    font-family: "Poppins", sans-serif;
+    border-radius: 12px;
+    width: 100px;
+    padding: 5px;
+    margin: 10px;
 }
