@@ -25,7 +25,7 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     width: 80vh;
-    height: 50vh;
+    height: auto;
     text-align: center;
     background-color: rgb(28, 52, 47, 0.9);
     border-radius: 12px;
@@ -42,7 +42,7 @@ body {
     background-color: #f1f9f6;
     font-family: "Poppins", sans-serif;
     border-radius: 12px;
-    width: 15vh;
+    width: auto;
     padding: 5px;
     margin: 10px;
     font-weight: bold;
@@ -86,6 +86,13 @@ button:hover {
    color: #ed5d5d;
 }
 
+/*Thank you section*/
+
+.text-padding {
+    padding: 30px;
+}
+
+
 /*To hide section when no longer needed on screen*/
 .hide {
     display: none;
@@ -101,3 +108,4 @@ button hover effect tutorial from https://www.30secondsofcode.org/*/
     transform: scale(1.1);
     
 }
+
