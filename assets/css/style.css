@@ -107,7 +107,7 @@ button hover effect tutorial from https://www.30secondsofcode.org/*/
 }
 
 /*Media Queries for mobile screens*/
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
     .container-styling {
         width: 70vh;
         margin-top: 30px;
