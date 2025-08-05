@@ -79,19 +79,16 @@ button:hover {
 }
 
 #true:hover {
-   color: #5c996e;
+    color: #5c996e;
 }
 
 #false:hover {
-   color: #ed5d5d;
+    color: #ed5d5d;
 }
-
-/*Thank you section*/
 
 .text-padding {
     padding: 30px;
 }
-
 
 /*To hide section when no longer needed on screen*/
 .hide {
@@ -106,6 +103,20 @@ button hover effect tutorial from https://www.30secondsofcode.org/*/
 
 .button-grow:hover {
     transform: scale(1.1);
-    
+
 }
 
+/*Media Queries for mobile screens*/
+@media screen and (max-width: 600px) {
+    .container-styling {
+        width: 70vh;
+        margin-top: 30px;
+    }
+
+    #btn-instructions {
+        display: flex;
+        margin: auto;
+        margin-top: 10px;
+    }
+
+}
