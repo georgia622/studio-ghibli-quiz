@@ -17,8 +17,12 @@
 </head>
 
 <body>
+    <div>
+         <button type="button" id="btn-instructions" class="btn-styling button-grow">
+                How To play</button>
+    </div>
     <!--Landing Page-->
-    <div class="container-styling">
+    <div class="container-styling hide">
         <div>
             <h1 class="heading-styling">Studio Ghibli: Fact or Fantasy</h1>
             <label for="playername">
@@ -40,14 +44,14 @@
         </div>
     </div>
     <!--Main Game section, questions & player information bar-->
-    <div class="container-styling hide">
+    <div class="container-styling">
         <header class="row heading-styling">
             <p id="player"> Player:</p>
             <p id="level">Level:</p>
             <p id="score">Score:</p>
         </header>
         <div>
-            <p class="text-padding"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, voluptates ad assumenda doloribus ratione
+            <p id="question" class="text-padding"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, voluptates ad assumenda doloribus ratione
                 nam dolorum nulla atque alias, reiciendis saepe aliquid iste repellat accusantium omnis magni debitis
                 mollitia amet!</p>
             <i id="true" class="fa-solid fa-circle-check icon-styling button-grow" aria-label="Click to select True">
@@ -80,6 +84,7 @@
     </div>
     <!--Font awesome Icons-->
     <script src="https://kit.fontawesome.com/f6db590005.js" crossorigin="anonymous"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>
