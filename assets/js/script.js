@@ -128,3 +128,13 @@ const hardQuestions = [
        answer: "false"
     },
 ];
+// Game button Variables 
+const playAgainButton = document.getElementById("play-again");
+const endButton = document.getElementById("end-game");
+const nextButton = document.getElementById("next");
+const homeButton = document.getElementById("home");
+const startButton = document.getElementById("start-game");
+const trueButton = document.getElementById("true");
+const falseButton = document.getElementById("false");
+
+const displayQuestion = document.getElementById("question");
