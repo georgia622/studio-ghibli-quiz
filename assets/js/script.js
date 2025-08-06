@@ -85,3 +85,46 @@ const mediumQuestions = [
        answer: "false"
     },
 ];
+
+const hardQuestions = [
+    {
+       question: "The original Japanese title of Spirited Away is Sen to Chihiro no Kamikakushi.",
+       answer: "true"
+    },
+    {
+       question: "In Nausicaä of the Valley of the Wind, Nausicaä rides a glider called a Möwe.",
+       answer: "true"
+    },
+    {
+       question: "Only Yesterday switches between 1980s and 1970s timelines.",
+       answer: "true"
+    },
+    {
+       question: "Ghibli co-founder Isao Takahata directed Howl's Moving Castle.",
+       answer: "false"
+    },
+    {
+       question: "The Baron from The Cat Returns also appears in Whisper of the Heart.",
+       answer: "false"
+    },
+    {
+       question: "Tales from Earthsea was directed by Hayao Miyazaki.",
+       answer: "false"
+    },
+    {
+       question: "In Princess Mononoke, the Forest Spirit dies and brings new life at the same time.",
+       answer: "true"
+    },
+    {
+       question: "From Up on Poppy Hill is set during the 1980s economic boom.",
+       answer: "false"
+    },
+    {
+       question: "When Marnie Was There is based on a British novel.",
+       answer: "true"
+    },
+    {
+       question: "The Tale of the Princess Kaguya was the last Ghibli film directed by Hayao Miyazaki.",
+       answer: "false"
+    },
+];
