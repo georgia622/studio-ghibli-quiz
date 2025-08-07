@@ -142,7 +142,6 @@ const hardQuestions = [
    },
 ];
 
-
 //Start Game on button click 
 startButton.addEventListener("click", function () {
    document.getElementById("welcome-page").classList.add("hide");
@@ -162,6 +161,11 @@ btnMedium.addEventListener("click", function () {
    showQuestion(levelSelect);
 });
 
+const btnHard = document.getElementById("btn-hard");
+btnHard.addEventListener("click", function () {
+   let levelSelect = this.getAttribute("data-type");
+   showQuestion(levelSelect);
+});
 function showQuestion(levelSelect) {
 
    if (levelSelect === "easy") {
