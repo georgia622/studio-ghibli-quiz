@@ -157,7 +157,7 @@ btnEasy.addEventListener("click", function () {
 });
 
 const btnMedium = document.getElementById("btn-medium");
-btnEasy.addEventListener("click", function () {
+btnMedium.addEventListener("click", function () {
    let levelSelect = this.getAttribute("data-type");
    showQuestion(levelSelect);
 });
@@ -167,7 +167,12 @@ function showQuestion(levelSelect) {
    if (levelSelect === "easy") {
       let currentQuestion = easyQuestions[currentQuestionIndex];
       displayQuestion.innerHTML = `${currentQuestion.question}`;
+   } else if (levelSelect === "medium"){
+       let currentQuestion = mediumQuestions[currentQuestionIndex];
+      displayQuestion.innerHTML = `${currentQuestion.question}`;
    }
+      
+   
 };
 
 
