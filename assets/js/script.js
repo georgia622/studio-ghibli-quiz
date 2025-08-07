@@ -166,17 +166,22 @@ btnHard.addEventListener("click", function () {
    let levelSelect = this.getAttribute("data-type");
    showQuestion(levelSelect);
 });
+
+/*Function to show questions from the selected level */
 function showQuestion(levelSelect) {
 
    if (levelSelect === "easy") {
       let currentQuestion = easyQuestions[currentQuestionIndex];
       displayQuestion.innerHTML = `${currentQuestion.question}`;
-   } else if (levelSelect === "medium"){
-       let currentQuestion = mediumQuestions[currentQuestionIndex];
+   } else if (levelSelect === "medium") {
+      let currentQuestion = mediumQuestions[currentQuestionIndex];
+      displayQuestion.innerHTML = `${currentQuestion.question}`;
+   }else if (levelSelect === "hard") {
+      let currentQuestion = hardQuestions[currentQuestionIndex];
       displayQuestion.innerHTML = `${currentQuestion.question}`;
    }
-      
-   
+
+
 };
 
 
