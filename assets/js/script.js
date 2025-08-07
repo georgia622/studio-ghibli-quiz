@@ -156,6 +156,12 @@ btnEasy.addEventListener("click", function () {
    showQuestion(levelSelect);
 });
 
+const btnMedium = document.getElementById("btn-medium");
+btnEasy.addEventListener("click", function () {
+   let levelSelect = this.getAttribute("data-type");
+   showQuestion(levelSelect);
+});
+
 function showQuestion(levelSelect) {
 
    if (levelSelect === "easy") {
