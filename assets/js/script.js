@@ -138,3 +138,11 @@ const trueButton = document.getElementById("true");
 const falseButton = document.getElementById("false");
 
 const displayQuestion = document.getElementById("question");
+
+//Start Game on button click 
+startButton.addEventListener("click", function(){
+   let currentGame = 0;
+   let currentQuestion = 0;
+   document.getElementById("welcome-page").classList.add("hide");
+   document.getElementById("game-page").classList.remove("hide");
+});
