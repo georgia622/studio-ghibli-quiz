@@ -199,12 +199,15 @@ nextButton.addEventListener("click", () => {
 
 /* True and false button event listener to check answer */
 trueButton.addEventListener("click", function(){
-   checkAnswer();
+   checkAnswer(true);
 });
 falseButtonButton.addEventListener("click", function(){
-   checkAnswer();
+   checkAnswer(false);
 });
 
+function checkAnswer (answer){
+ 
+}
 
 
 /* To display Thank You page and hide the game play */
