@@ -218,7 +218,7 @@ function showQuestion(levelSelect) {
 
 /*To display the next question when next button clicked */
 nextButton.addEventListener("click", () => {
-   if (currentQuestionIndex < 10) {
+   if (currentQuestionIndex < 9) {
       currentQuestionIndex++;
       let levelSelect = nextButton.getAttribute("data-type");
       showQuestion(levelSelect);
