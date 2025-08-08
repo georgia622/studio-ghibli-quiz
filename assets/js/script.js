@@ -15,7 +15,7 @@ let currentQuestion = " ";
 //Quiz Questions
 const easyQuestions = [
    {
-      "question": "Totoro is a large, fluffy forest spirit.",
+      question: "Totoro is a large, fluffy forest spirit.",
       answer: "true",
       response: "Totoro is indeed a large, fluffy forest spirit from the animated film My Neighbor Totoro."
    },
@@ -69,43 +69,53 @@ const easyQuestions = [
 const mediumQuestions = [
    {
       question: "No-Face speaks a lot throughout Spirited Away.",
-      answer: "false"
+      answer: "false",
+      response: "he is largely a silent character, communicating primarily through gestures and sounds, especially in the beginning of the film."
    },
    {
       question: "San, from Princess Mononoke, wears a wolf pelt and face paint.",
-      answer: "true"
+      answer: "true",
+      response: "she wears a wolf pelt and has red war paint on her face. She is depicted as a young woman raised by wolves, and her appearance reflects this upbringing."
    },
    {
       question: "Castle in the Sky was Studio Ghibli's first official release.",
-      answer: "true"
+      answer: "true",
+      response:"Castle in the Sky, released in 1986, was Studio Ghibli's first official film."
    },
    {
       question: "In The Cat Returns, the protagonist becomes a cat herself.",
-      answer: "true"
+      answer: "true",
+      response: "the protagonist, Haru Yoshioka, does indeed transform into a cat."
    },
    {
-      question: "Whisper of the Heart is about a girl who discovers she can talk to animals",
-      answer: "false"
+      question: "Whisper of the Heart is about a girl who discovers she can talk to animals.",
+      answer: "false",
+      response: "It's a coming of age story about a young girl named Shizuku who discovers her passion for writing and pursues it with determination."
    },
    {
       question: "Turnip Head in Howl's Moving Castle turns out to be a cursed prince.",
-      answer: "true"
+      answer: "true",
+      response: "Turnip Head is indeed revealed to be Prince Justin, a cursed prince from a neighboring kingdom."
    },
    {
       question: "Porco Rosso is about a pilot cursed to look like a pig",
-      answer: "true"
+      answer: "true",
+      response: "Porco Rosso tells the story of an Italian World War I ex-fighter ace who is cursed to look like a pig."
    },
    {
       question: "Chihiro forgets her real name in Spirited Away.",
-      answer: "true"
+      answer: "true",
+      response: "through a combination of magic and the passage of time, she begins to forget her original name, Chihiro."
    },
    {
       question: "The tanuki in Pom Poko use magic to transform.",
-      answer: "true"
+      answer: "true",
+      response: "they are depicted as magical creatures, known as bake-danuki in Japanese folklore, who can shapeshift into various forms."
    },
    {
       question: "The Wind Rises is a fantasy story with talking animals.",
-      answer: "false"
+      answer: "false",
+      response: "it's a historical drama based on the life of Jiro Horikoshi, the designer of the Mitsubishi A6M Zero fighter plane."
    },
 ];
 
@@ -220,7 +230,7 @@ function checkAnswer(answer) {
    if (currentQuestion.answer === answer) {
       displayQuestion.innerHTML = "That's Correct!";
    } else {
-      displayQuestion.innerHTML = "Almost! The correct answer is" + " " + `${questionAnswer}` + ", " + `${currentQuestion.response}`;
+      displayQuestion.innerHTML = "The correct answer is" + " " + `${questionAnswer}` + ", " + `${currentQuestion.response}`;
    }
 }
 
