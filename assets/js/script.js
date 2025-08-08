@@ -172,15 +172,15 @@ btnHard.addEventListener("click", function () {
 function showQuestion(levelSelect) {
 
    if (levelSelect === "easy") {
-      let currentQuestion = easyQuestions[currentQuestionIndex];
+      currentQuestion = easyQuestions[currentQuestionIndex];
       displayQuestion.innerHTML = `${currentQuestion.question}`;
       nextButton.setAttribute("data-type", "easy");
    } else if (levelSelect === "medium") {
-      let currentQuestion = mediumQuestions[currentQuestionIndex];
+      currentQuestion = mediumQuestions[currentQuestionIndex];
       displayQuestion.innerHTML = `${currentQuestion.question}`;
       nextButton.setAttribute("data-type", "medium");
    } else if (levelSelect === "hard") {
-      let currentQuestion = hardQuestions[currentQuestionIndex];
+      currentQuestion = hardQuestions[currentQuestionIndex];
       displayQuestion.innerHTML = `${currentQuestion.question}`;
       nextButton.setAttribute("data-type", "hard");
    }
@@ -199,14 +199,19 @@ nextButton.addEventListener("click", () => {
 
 /* True and false button event listener to check answer */
 trueButton.addEventListener("click", function(){
-   checkAnswer(true);
+   checkAnswer("true");
 });
-falseButtonButton.addEventListener("click", function(){
-   checkAnswer(false);
+falseButton.addEventListener("click", function(){
+   checkAnswer("false");
 });
 
 function checkAnswer (answer){
- 
+  let questionAnswer = currentQuestion.answer;
+ if(currentQuestion.answer === answer){
+   displayQuestion.innerHTML = "That's Correct!";
+ } else{
+   displayQuestion.innerHTML = "Almost! The correct answer is" + " " + `${questionAnswer}`;
+ }
 }
 
 
