@@ -191,9 +191,12 @@ nextButton.addEventListener("click", () => {
    currentQuestionIndex++;
    let levelSelect = nextButton.getAttribute("data-type");
    showQuestion(levelSelect);
-  } 
+  } else {
+   endGame();
+  }
 });
 
-
-
-
+function endGame(){
+   document.getElementById("game-page").classList.add("hide");
+   document.getElementById("thank-you").classList.remove("hide");
+}
