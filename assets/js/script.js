@@ -176,27 +176,35 @@ function showQuestion(levelSelect) {
       displayQuestion.innerHTML = `${currentQuestion.question}`;
       nextButton.setAttribute("data-type", "easy");
    } else if (levelSelect === "medium") {
-   let currentQuestion = mediumQuestions[currentQuestionIndex];
-   displayQuestion.innerHTML = `${currentQuestion.question}`;
-   nextButton.setAttribute("data-type", "medium");
+      let currentQuestion = mediumQuestions[currentQuestionIndex];
+      displayQuestion.innerHTML = `${currentQuestion.question}`;
+      nextButton.setAttribute("data-type", "medium");
    } else if (levelSelect === "hard") {
-   let currentQuestion = hardQuestions[currentQuestionIndex];
-   displayQuestion.innerHTML = `${currentQuestion.question}`;
-   nextButton.setAttribute("data-type", "hard");
-}
+      let currentQuestion = hardQuestions[currentQuestionIndex];
+      displayQuestion.innerHTML = `${currentQuestion.question}`;
+      nextButton.setAttribute("data-type", "hard");
+   }
 }
 
+/*To display the next question when next button clicked */
 nextButton.addEventListener("click", () => {
-  if(currentQuestionIndex < 10){
-   currentQuestionIndex++;
-   let levelSelect = nextButton.getAttribute("data-type");
-   showQuestion(levelSelect);
-  } else {
-   endGame();
-  }
+   if (currentQuestionIndex < 10) {
+      currentQuestionIndex++;
+      let levelSelect = nextButton.getAttribute("data-type");
+      showQuestion(levelSelect);
+   } else {
+      endGame();
+   }
 });
 
-function endGame(){
+/* True and false button event listener to check answer */
+
+trueButton.addEventListener("click", function(){
+   checkAnswer();
+});
+
+/* To display Thank You page and hide the game play */
+function endGame() {
    document.getElementById("game-page").classList.add("hide");
    document.getElementById("thank-you").classList.remove("hide");
 }
