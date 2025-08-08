@@ -10,7 +10,7 @@ const falseButton = document.getElementById("false");
 const displayQuestion = document.getElementById("question");
 
 let currentQuestionIndex = 0;
-
+let currentQuestion = " ";
 
 //Quiz Questions
 const easyQuestions = [
@@ -167,21 +167,33 @@ btnHard.addEventListener("click", function () {
    showQuestion(levelSelect);
 });
 
+
 /*Function to show questions from the selected level */
 function showQuestion(levelSelect) {
 
    if (levelSelect === "easy") {
       let currentQuestion = easyQuestions[currentQuestionIndex];
       displayQuestion.innerHTML = `${currentQuestion.question}`;
+      nextButton.setAttribute("data-type", "easy");
    } else if (levelSelect === "medium") {
-      let currentQuestion = mediumQuestions[currentQuestionIndex];
-      displayQuestion.innerHTML = `${currentQuestion.question}`;
-   }else if (levelSelect === "hard") {
-      let currentQuestion = hardQuestions[currentQuestionIndex];
-      displayQuestion.innerHTML = `${currentQuestion.question}`;
-   }
+   let currentQuestion = mediumQuestions[currentQuestionIndex];
+   displayQuestion.innerHTML = `${currentQuestion.question}`;
+   nextButton.setAttribute("data-type", "medium");
+   } else if (levelSelect === "hard") {
+   let currentQuestion = hardQuestions[currentQuestionIndex];
+   displayQuestion.innerHTML = `${currentQuestion.question}`;
+   nextButton.setAttribute("data-type", "hard");
+}
+}
+
+nextButton.addEventListener("click", () => {
+  if(currentQuestionIndex < 10){
+   currentQuestionIndex++;
+   let levelSelect = nextButton.getAttribute("data-type");
+   showQuestion(levelSelect);
+  } 
+});
 
 
-};
 
 
