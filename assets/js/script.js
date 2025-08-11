@@ -172,11 +172,15 @@ const hardQuestions = [
    },
 ];
 
+
+
 //Start Game on button click 
 startButton.addEventListener("click", function () {
    document.getElementById("welcome-page").classList.add("hide");
    document.getElementById("game-page").classList.remove("hide");
 });
+
+
 
 // Get level selection on click 
 const btnEasy = document.getElementById("btn-easy");
@@ -227,6 +231,7 @@ nextButton.addEventListener("click", () => {
    }
 });
 
+
 // True and false button event listener to check answer
 trueButton.addEventListener("click", function () {
    checkAnswer("true");
@@ -242,6 +247,13 @@ function removeButton (){
   let buttonContainer = document.getElementById("true-false-buttons");
   buttonContainer.classList.add("hide");
 }
+
+function addButton (){
+   buttonContainer.classList.remove("hide")
+}
+
+
+
 function checkAnswer(answer) {
    let questionAnswer = currentQuestion.answer;
    if (currentQuestion.answer === answer) {
@@ -253,6 +265,7 @@ function checkAnswer(answer) {
 }
 
 
+
 function updateScore (){
   let previousScore = document.getElementById("score").innerHTML;
   document.getElementById("score").innerHTML = ++previousScore;
@@ -262,6 +275,8 @@ function finalScore (){
    let finalScore = document.getElementById("score").innerHTML;
    document.getElementById("final-score").innerHTML = finalScore;
 }
+
+
 
 /** To display Thank You page, hide the game play and show the final score*/
 function endGame() {
