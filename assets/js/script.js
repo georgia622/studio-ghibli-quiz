@@ -230,10 +230,12 @@ nextButton.addEventListener("click", () => {
 // True and false button event listener to check answer
 trueButton.addEventListener("click", function () {
    checkAnswer("true");
+   removeButton();
 });
 
 falseButton.addEventListener("click", function () {
    checkAnswer("false");
+   removeButton();
 });
 
 function checkAnswer(answer) {
@@ -246,6 +248,14 @@ function checkAnswer(answer) {
    }
 }
 
+function removeButton(){
+   let removeTrue = document.getElementById("true");
+   removeTrue.remove();
+   let removeFalse = document.getElementById("false");
+   removeFalse.remove();
+}
+
+
 function updateScore (){
   let previousScore = document.getElementById("score").innerHTML;
   document.getElementById("score").innerHTML = ++previousScore;
@@ -256,7 +266,7 @@ function finalScore (){
    document.getElementById("final-score").innerHTML = finalScore;
 }
 
-/** To display Thank You page and hide the game play*/
+/** To display Thank You page, hide the game play and show the final score*/
 function endGame() {
    document.getElementById("game-page").classList.add("hide");
    document.getElementById("thank-you").classList.remove("hide");
