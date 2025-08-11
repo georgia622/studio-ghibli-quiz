@@ -226,6 +226,7 @@ nextButton.addEventListener("click", () => {
       currentQuestionIndex++;
       let levelSelect = nextButton.getAttribute("data-type");
       showQuestion(levelSelect);
+      addButton();
    } else {
       endGame();
    }
@@ -249,7 +250,8 @@ function removeButton (){
 }
 
 function addButton (){
-   buttonContainer.classList.remove("hide")
+   buttonContainer = document.getElementById("true-false-buttons");
+   buttonContainer.classList.remove("hide");
 }
 
 
