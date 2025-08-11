@@ -246,7 +246,8 @@ function checkAnswer(answer) {
 }
 
 function updateScore (){
-   
+  let previousScore = document.getElementById("score").innerHTML;
+  document.getElementById("score").innerHTML = ++previousScore;
 }
 
 /** To display Thank You page and hide the game play*/
