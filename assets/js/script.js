@@ -198,7 +198,7 @@ btnHard.addEventListener("click", function () {
 });
 
 
-/*Function to show questions from the selected level */
+/** Function to show questions from the selected level */
 function showQuestion(levelSelect) {
 
    if (levelSelect === "easy") {
@@ -216,7 +216,7 @@ function showQuestion(levelSelect) {
    }
 }
 
-/*To display the next question when next button clicked */
+// To display the next question when next button clicked 
 nextButton.addEventListener("click", () => {
    if (currentQuestionIndex < 9) {
       currentQuestionIndex++;
@@ -227,7 +227,7 @@ nextButton.addEventListener("click", () => {
    }
 });
 
-/* True and false button event listener to check answer */
+// True and false button event listener to check answer
 trueButton.addEventListener("click", function () {
    checkAnswer("true");
 });
@@ -245,8 +245,11 @@ function checkAnswer(answer) {
    }
 }
 
+function updateScore (){
+   
+}
 
-/* To display Thank You page and hide the game play */
+/** To display Thank You page and hide the game play*/
 function endGame() {
    document.getElementById("game-page").classList.add("hide");
    document.getElementById("thank-you").classList.remove("hide");
