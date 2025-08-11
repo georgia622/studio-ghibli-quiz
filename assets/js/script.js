@@ -251,8 +251,14 @@ function updateScore (){
   document.getElementById("score").innerHTML = ++previousScore;
 }
 
+function finalScore (){
+   let finalScore = document.getElementById("score").innerHTML;
+   document.getElementById("final-score").innerHTML = finalScore;
+}
+
 /** To display Thank You page and hide the game play*/
 function endGame() {
    document.getElementById("game-page").classList.add("hide");
    document.getElementById("thank-you").classList.remove("hide");
+   finalScore();
 }
