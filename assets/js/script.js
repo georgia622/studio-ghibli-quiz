@@ -240,6 +240,7 @@ function checkAnswer(answer) {
    let questionAnswer = currentQuestion.answer;
    if (currentQuestion.answer === answer) {
       displayQuestion.innerHTML = "That's Correct!";
+      updateScore();
    } else {
       displayQuestion.innerHTML = "The correct answer is" + " " + `${questionAnswer}` + ", " + `${currentQuestion.response}`;
    }
