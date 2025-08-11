@@ -238,6 +238,10 @@ falseButton.addEventListener("click", function () {
    removeButton();
 });
 
+function removeButton (){
+  let buttonContainer = document.getElementById("true-false-buttons");
+  buttonContainer.classList.add("hide");
+}
 function checkAnswer(answer) {
    let questionAnswer = currentQuestion.answer;
    if (currentQuestion.answer === answer) {
@@ -246,13 +250,6 @@ function checkAnswer(answer) {
    } else {
       displayQuestion.innerHTML = "The correct answer is" + " " + `${questionAnswer}` + ", " + `${currentQuestion.response}`;
    }
-}
-
-function removeButton(){
-   let removeTrue = document.getElementById("true");
-   removeTrue.remove();
-   let removeFalse = document.getElementById("false");
-   removeFalse.remove();
 }
 
 
