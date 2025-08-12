@@ -9,6 +9,7 @@ const trueButton = document.getElementById("true");
 const falseButton = document.getElementById("false");
 const displayQuestion = document.getElementById("question");
 const playerName = document.getElementById("playerName");
+const form = document.querySelector("form");
 
 let currentQuestionIndex = 0;
 let currentQuestion = " ";
@@ -172,8 +173,7 @@ const hardQuestions = [
       response: "The Tale of the Princess Kaguya was directed by Isao Takahata, not Hayao Miyazaki. Hayao Miyazaki's final film before his retirement was The Wind Rises."
    },
 ];
-
-
+ 
 
 //Start Game on button click 
 startButton.addEventListener("click", function () {
