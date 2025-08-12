@@ -192,7 +192,6 @@ startButton.addEventListener("click", function (e) {
 
 function startButtonAdd() {
    startButton.classList.remove("hide");
-
 }
 
 // Get level selection on click 
@@ -207,12 +206,14 @@ const btnMedium = document.getElementById("btn-medium");
 btnMedium.addEventListener("click", function () {
    let levelSelect = this.getAttribute("data-type");
    showQuestion(levelSelect);
+   startButtonAdd();
 });
 
 const btnHard = document.getElementById("btn-hard");
 btnHard.addEventListener("click", function () {
    let levelSelect = this.getAttribute("data-type");
    showQuestion(levelSelect);
+   startButtonAdd();
 });
 
 
