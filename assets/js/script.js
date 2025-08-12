@@ -8,6 +8,7 @@ const startButton = document.getElementById("start-game");
 const trueButton = document.getElementById("true");
 const falseButton = document.getElementById("false");
 const displayQuestion = document.getElementById("question");
+const playerName = document.getElementById("playerName");
 
 let currentQuestionIndex = 0;
 let currentQuestion = " ";
@@ -254,8 +255,6 @@ function addButton (){
    buttonContainer.classList.remove("hide");
 }
 
-
-
 function checkAnswer(answer) {
    let questionAnswer = currentQuestion.answer;
    if (currentQuestion.answer === answer) {
@@ -277,6 +276,7 @@ function finalScore (){
    let finalScore = document.getElementById("score").innerHTML;
    document.getElementById("final-score").innerHTML = finalScore;
 }
+
 
 
 
