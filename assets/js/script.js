@@ -180,26 +180,27 @@ const hardQuestions = [
 startButton.addEventListener("click", function (e) {
    e.preventDefault();
    const playerName = document.getElementById("playername");
-   
+
    if (!playerName.value) {
       alert("Please enter your player name to continue");
+   } else {
+      document.getElementById("welcome-page").classList.add("hide");
+      document.getElementById("game-page").classList.remove("hide");
    }
 })
 
 
-//Start Game on button click 
-//startButton.addEventListener("click", function () {
-//   document.getElementById("welcome-page").classList.add("hide");
-// document.getElementById("game-page").classList.remove("hide");
-//});
+function startButtonAdd() {
+   startButton.classList.remove("hide");
 
-
+}
 
 // Get level selection on click 
 const btnEasy = document.getElementById("btn-easy");
 btnEasy.addEventListener("click", function () {
    let levelSelect = this.getAttribute("data-type");
    showQuestion(levelSelect);
+   startButtonAdd();
 });
 
 const btnMedium = document.getElementById("btn-medium");
