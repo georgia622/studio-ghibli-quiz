@@ -180,8 +180,7 @@ const hardQuestions = [
 startButton.addEventListener("click", function (e) {
    e.preventDefault();
    const playerName = document.getElementById("playername");
-   let valid = true;
-
+   
    if (!playerName.value) {
       alert("Please enter your player name to continue");
    }
