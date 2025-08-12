@@ -186,9 +186,9 @@ startButton.addEventListener("click", function (e) {
    } else {
       document.getElementById("welcome-page").classList.add("hide");
       document.getElementById("game-page").classList.remove("hide");
+      playerNameDisplay();
    }
 })
-
 
 function startButtonAdd() {
    startButton.classList.remove("hide");
@@ -279,7 +279,10 @@ function checkAnswer(answer) {
    }
 }
 
-
+function playerNameDisplay (){
+   let playerInput = document.getElementById("playername").value;
+   document.getElementById("player").innerHTML = playerInput;
+}
 
 function updateScore() {
    let previousScore = document.getElementById("score").innerHTML;
