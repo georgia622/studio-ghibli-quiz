@@ -8,9 +8,8 @@ const startButton = document.getElementById("start-game");
 const trueButton = document.getElementById("true");
 const falseButton = document.getElementById("false");
 const displayQuestion = document.getElementById("question");
-const playerName = document.getElementById("playerName");
-const form = document.querySelector("form");
-const submit = document.getElementById("submit");
+
+
 
 let currentQuestionIndex = 0;
 let currentQuestion = " ";
@@ -83,7 +82,7 @@ const mediumQuestions = [
    {
       question: "Castle in the Sky was Studio Ghibli's first official release.",
       answer: "true",
-      response:"Castle in the Sky, released in 1986, was Studio Ghibli's first official film."
+      response: "Castle in the Sky, released in 1986, was Studio Ghibli's first official film."
    },
    {
       question: "In The Cat Returns, the protagonist becomes a cat herself.",
@@ -174,12 +173,25 @@ const hardQuestions = [
       response: "The Tale of the Princess Kaguya was directed by Isao Takahata, not Hayao Miyazaki. Hayao Miyazaki's final film before his retirement was The Wind Rises."
    },
 ];
- 
+
+// To check that the user has entered a player name to be able to start the game,
+// tutorial used as guide from https://www.freecodecamp.org/news/form-validation-with-html5-and-javascript/
+
+startButton.addEventListener("click", function (e) {
+   e.preventDefault();
+   const playerName = document.getElementById("playername");
+   let valid = true;
+
+   if (!playerName.value) {
+      alert("Please enter your player name to continue");
+   }
+})
+
 
 //Start Game on button click 
 //startButton.addEventListener("click", function () {
 //   document.getElementById("welcome-page").classList.add("hide");
-  // document.getElementById("game-page").classList.remove("hide");
+// document.getElementById("game-page").classList.remove("hide");
 //});
 
 
@@ -246,12 +258,12 @@ falseButton.addEventListener("click", function () {
    removeButton();
 });
 
-function removeButton (){
-  let buttonContainer = document.getElementById("true-false-buttons");
-  buttonContainer.classList.add("hide");
+function removeButton() {
+   let buttonContainer = document.getElementById("true-false-buttons");
+   buttonContainer.classList.add("hide");
 }
 
-function addButton (){
+function addButton() {
    buttonContainer = document.getElementById("true-false-buttons");
    buttonContainer.classList.remove("hide");
 }
@@ -268,12 +280,12 @@ function checkAnswer(answer) {
 
 
 
-function updateScore (){
-  let previousScore = document.getElementById("score").innerHTML;
-  document.getElementById("score").innerHTML = ++previousScore;
+function updateScore() {
+   let previousScore = document.getElementById("score").innerHTML;
+   document.getElementById("score").innerHTML = ++previousScore;
 }
 
-function finalScore (){
+function finalScore() {
    let finalScore = document.getElementById("score").innerHTML;
    document.getElementById("final-score").innerHTML = finalScore;
 }
