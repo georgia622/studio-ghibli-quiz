@@ -10,6 +10,7 @@ const falseButton = document.getElementById("false");
 const displayQuestion = document.getElementById("question");
 const playerName = document.getElementById("playerName");
 const form = document.querySelector("form");
+const submit = document.getElementById("submit");
 
 let currentQuestionIndex = 0;
 let currentQuestion = " ";
@@ -176,10 +177,10 @@ const hardQuestions = [
  
 
 //Start Game on button click 
-startButton.addEventListener("click", function () {
-   document.getElementById("welcome-page").classList.add("hide");
-   document.getElementById("game-page").classList.remove("hide");
-});
+//startButton.addEventListener("click", function () {
+//   document.getElementById("welcome-page").classList.add("hide");
+  // document.getElementById("game-page").classList.remove("hide");
+//});
 
 
 
