@@ -295,14 +295,21 @@ function finalScore() {
    document.getElementById("final-score").innerHTML = finalScore;
 }
 
+// Event listener for end game button, takes user back to welcome page, clears score and player name
 
+endButton.addEventListener("click", function() {
+   finishGame();
+});
+
+/** Clears the score and sets the question index back to 0, removes hide class from welcome page */
 function finishGame (){
    document.getElementById("thank-you").classList.add("hide");
    document.getElementById("welcome-page").classList.remove("hide");
-   finalScore = 0;
-   previousScore = 0;
-   document.getElementById("player").innerHTML = " ";
+   currentQuestionIndex = 0;
+   document.getElementById("score").innerHTML = "0";
+   document.getElementById("playername").innerHTML = " ";
 }
+
 
 /** To display Thank You page, hide the game play and show the final score*/
 function endGame() {
