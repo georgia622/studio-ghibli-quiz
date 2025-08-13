@@ -279,6 +279,7 @@ function checkAnswer(answer) {
    }
 }
 
+
 function playerNameDisplay (){
    let playerInput = document.getElementById("playername").value;
    document.getElementById("player").innerHTML = playerInput;
@@ -295,7 +296,13 @@ function finalScore() {
 }
 
 
-
+function finishGame (){
+   document.getElementById("thank-you").classList.add("hide");
+   document.getElementById("welcome-page").classList.remove("hide");
+   finalScore = 0;
+   previousScore = 0;
+   document.getElementById("player").innerHTML = " ";
+}
 
 /** To display Thank You page, hide the game play and show the final score*/
 function endGame() {
