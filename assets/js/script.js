@@ -301,6 +301,10 @@ endButton.addEventListener("click", function() {
    finishGame();
 });
 
+playAgainButton.addEventListener("click", function (){
+   finishGame();
+   document.getElementById("level-message").innerHTML = "Choose Your Next Level!";
+})
 /** Clears the score and sets the question index back to 0, removes hide class from welcome page */
 function finishGame (){
    document.getElementById("thank-you").classList.add("hide");
@@ -308,6 +312,7 @@ function finishGame (){
    currentQuestionIndex = 0;
    document.getElementById("score").innerHTML = "0";
    document.getElementById("playername").innerHTML = " ";
+   startButton.classList.add("hide");
 }
 
 
