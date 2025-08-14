@@ -296,15 +296,21 @@ function finalScore() {
 }
 
 // Event listener for end game button, takes user back to welcome page, clears score and player name
-
 endButton.addEventListener("click", function() {
+   document.getElementById("level-message").innerHTML = "Pick your path through the Ghibli world!";
    finishGame();
 });
 
 playAgainButton.addEventListener("click", function (){
    finishGame();
    document.getElementById("level-message").innerHTML = "Choose Your Next Level!";
-})
+});
+
+homeButton.addEventListener("click", function (){
+   finishGame();
+   document.getElementById("game-page").classList.add("hide");
+});
+
 /** Clears the score and sets the question index back to 0, removes hide class from welcome page */
 function finishGame (){
    document.getElementById("thank-you").classList.add("hide");
