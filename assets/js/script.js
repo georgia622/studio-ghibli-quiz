@@ -1,5 +1,4 @@
-
-// Game button Variables 
+//Game button Variables
 const playAgainButton = document.getElementById("play-again");
 const endButton = document.getElementById("end-game");
 const nextButton = document.getElementById("next");
@@ -8,7 +7,7 @@ const startButton = document.getElementById("start-game");
 const trueButton = document.getElementById("true");
 const falseButton = document.getElementById("false");
 const displayQuestion = document.getElementById("question");
-const howToButton = document.getElementById("btn-instructions")
+const howToButton = document.getElementById("btn-instructions");
 
 
 
@@ -66,7 +65,7 @@ const easyQuestions = [
       question: "Grave of the Fireflies is a comedy.",
       answer: "false",
       response: "It is a highly acclaimed and intensely emotional animated war film."
-   },
+   }
 ];
 
 const mediumQuestions = [
@@ -119,7 +118,7 @@ const mediumQuestions = [
       question: "The Wind Rises is a fantasy story with talking animals.",
       answer: "false",
       response: "it's a historical drama based on the life of Jiro Horikoshi, the designer of the Mitsubishi A6M Zero fighter plane."
-   },
+   }
 ];
 
 const hardQuestions = [
@@ -172,7 +171,7 @@ const hardQuestions = [
       question: "The Tale of the Princess Kaguya was the last Ghibli film directed by Hayao Miyazaki.",
       answer: "false",
       response: "The Tale of the Princess Kaguya was directed by Isao Takahata, not Hayao Miyazaki. Hayao Miyazaki's final film before his retirement was The Wind Rises."
-   },
+   }
 ];
 
 
@@ -180,8 +179,8 @@ howToButton.addEventListener("click", function (){
    document.getElementById("myDropdown").classList.toggle("hide");
 });
 
-// To check that the user has entered a player name to be able to start the game,
-// tutorial used as guide from https://www.freecodecamp.org/news/form-validation-with-html5-and-javascript/
+//To check that the user has entered a player name to be able to start the game,
+//tutorial used as guide from https://www.freecodecamp.org/news/form-validation-with-html5-and-javascript/
 
 startButton.addEventListener("click", function (e) {
    e.preventDefault();
@@ -194,13 +193,13 @@ startButton.addEventListener("click", function (e) {
       document.getElementById("game-page").classList.remove("hide");
       playerNameDisplay();
    }
-})
+});
 
 function startButtonAdd() {
    startButton.classList.remove("hide");
 }
 
-// Get level selection on click 
+//Get level selection on click 
 const btnEasy = document.getElementById("btn-easy");
 btnEasy.addEventListener("click", function () {
    let levelSelect = this.getAttribute("data-type");
@@ -241,8 +240,8 @@ function showQuestion(levelSelect) {
    }
 }
 
-// To display the next question when next button clicked 
-nextButton.addEventListener("click", () => {
+//To display the next question when next button clicked 
+nextButton.addEventListener("click", function () {
    if (currentQuestionIndex < 9) {
       currentQuestionIndex++;
       let levelSelect = nextButton.getAttribute("data-type");
@@ -254,7 +253,7 @@ nextButton.addEventListener("click", () => {
 });
 
 
-// True and false button event listener to check answer
+//True and false button event listener to check answer
 trueButton.addEventListener("click", function () {
    checkAnswer("true");
    removeButton();
@@ -271,7 +270,7 @@ function removeButton() {
 }
 
 function addButton() {
-   buttonContainer = document.getElementById("true-false-buttons");
+   let buttonContainer = document.getElementById("true-false-buttons");
    buttonContainer.classList.remove("hide");
 }
 
@@ -301,7 +300,7 @@ function finalScore() {
    document.getElementById("final-score").innerHTML = finalScore;
 }
 
-// Event listener for end game button, takes user back to welcome page, clears score and player name
+//Event listener for end game button, takes user back to welcome page, clears score and player name
 endButton.addEventListener("click", function() {
    document.getElementById("level-message").innerHTML = "Pick your path through the Ghibli world!";
    finishGame();
