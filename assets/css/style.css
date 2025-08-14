@@ -27,6 +27,7 @@ body {
 
 .dropdown-content {
     position: absolute;
+    z-index: 1;
     background-color: #1c342f;
     border: solid 3px #ffce85;
     width: 300px;

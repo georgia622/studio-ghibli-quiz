@@ -8,6 +8,7 @@ const startButton = document.getElementById("start-game");
 const trueButton = document.getElementById("true");
 const falseButton = document.getElementById("false");
 const displayQuestion = document.getElementById("question");
+const howToButton = document.getElementById("btn-instructions")
 
 
 
@@ -173,6 +174,11 @@ const hardQuestions = [
       response: "The Tale of the Princess Kaguya was directed by Isao Takahata, not Hayao Miyazaki. Hayao Miyazaki's final film before his retirement was The Wind Rises."
    },
 ];
+
+
+howToButton.addEventListener("click", function (){
+   document.getElementById("myDropdown").classList.toggle("hide");
+});
 
 // To check that the user has entered a player name to be able to start the game,
 // tutorial used as guide from https://www.freecodecamp.org/news/form-validation-with-html5-and-javascript/
