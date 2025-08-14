@@ -20,6 +20,28 @@ body {
     padding: 15px;
 }
 
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    position: absolute;
+    background-color: #1c342f;
+    border: solid 3px #ffce85;
+    width: 300px;
+    height: 250px;
+    margin: 10px;
+    padding: 10px;
+    text-align: left;
+    border-radius: 10%;
+    line-height: 30px;
+}
+
+.list-style {
+    list-style: none;
+}
+
 .container-styling {
     display: flex;
     flex-direction: column;
@@ -111,7 +133,7 @@ button hover effect tutorial from https://www.30secondsofcode.org/*/
     .container-styling {
         width: 100%;
         margin-top: 40px;
-        
+
     }
 
     #btn-instructions {
