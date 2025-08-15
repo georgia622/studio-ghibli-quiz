@@ -12,12 +12,7 @@ const btnMedium = document.getElementById("btn-medium");
 const btnEasy = document.getElementById("btn-easy");
 const btnHard = document.getElementById("btn-hard");
 
-
-
-let currentQuestionIndex = 0;
-let currentQuestion = " ";
-
-//Quiz Questions
+//Quiz Questions,answers and responses
 const easyQuestions = [
    {
       question: "Totoro is a large, fluffy forest spirit.",
@@ -177,6 +172,9 @@ const hardQuestions = [
    }
 ];
 
+let currentQuestionIndex = 0;
+let currentQuestion = " ";
+
 
 howToButton.addEventListener("click", function (){
    document.getElementById("myDropdown").classList.toggle("hide");
@@ -277,6 +275,8 @@ function addButton() {
    buttonContainer.classList.remove("hide");
 }
 
+
+/**Checks answer and updates score if correct, displays text with correct answer and why if incorrect */
 function checkAnswer(answer) {
    let questionAnswer = currentQuestion.answer;
    if (currentQuestion.answer === answer) {
