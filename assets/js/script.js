@@ -8,6 +8,9 @@ const trueButton = document.getElementById("true");
 const falseButton = document.getElementById("false");
 const displayQuestion = document.getElementById("question");
 const howToButton = document.getElementById("btn-instructions");
+const btnMedium = document.getElementById("btn-medium");
+const btnEasy = document.getElementById("btn-easy");
+const btnHard = document.getElementById("btn-hard");
 
 
 
@@ -187,7 +190,7 @@ startButton.addEventListener("click", function (e) {
    const playerName = document.getElementById("playername");
 
    if (!playerName.value) {
-      alert("Please enter your player name to continue");
+       alert("Please enter player name to continue!");
    } else {
       document.getElementById("welcome-page").classList.add("hide");
       document.getElementById("game-page").classList.remove("hide");
@@ -200,21 +203,21 @@ function startButtonAdd() {
 }
 
 //Get level selection on click 
-const btnEasy = document.getElementById("btn-easy");
+
 btnEasy.addEventListener("click", function () {
    let levelSelect = this.getAttribute("data-type");
    showQuestion(levelSelect);
    startButtonAdd();
 });
 
-const btnMedium = document.getElementById("btn-medium");
+
 btnMedium.addEventListener("click", function () {
    let levelSelect = this.getAttribute("data-type");
    showQuestion(levelSelect);
    startButtonAdd();
 });
 
-const btnHard = document.getElementById("btn-hard");
+
 btnHard.addEventListener("click", function () {
    let levelSelect = this.getAttribute("data-type");
    showQuestion(levelSelect);
