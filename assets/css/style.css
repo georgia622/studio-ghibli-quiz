@@ -74,6 +74,11 @@ body {
 button:hover {
     background-color: rgb(255, 206, 133);
 }
+/*Change button colour and size when clicked */
+button:focus {
+    background-color: rgb(255, 206, 133);
+    transform: scale(1.1);
+}
 
 .align-right {
     display: flex;
@@ -126,7 +131,6 @@ button hover effect tutorial from https://www.30secondsofcode.org/*/
 
 .button-grow:hover {
     transform: scale(1.1);
-
 }
 
 /*Media Queries for mobile screens*/
