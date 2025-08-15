@@ -74,6 +74,7 @@ body {
 button:hover {
     background-color: rgb(255, 206, 133);
 }
+
 /*Change button colour and size when clicked */
 button:focus {
     background-color: rgb(255, 206, 133);
@@ -133,12 +134,23 @@ button hover effect tutorial from https://www.30secondsofcode.org/*/
     transform: scale(1.1);
 }
 
+/*404 page styling*/
+
+.nav-link {
+    color: #f1f9f6;
+}
+
+.nav-link:hover {
+    color: rgb(255, 206, 133);
+}
+
+
 /*Media Queries for mobile screens*/
 @media screen and (max-width: 800px) {
     .container-styling {
         width: 100%;
         margin-top: 40px;
-
+        height: auto;
     }
 
     #btn-instructions {
