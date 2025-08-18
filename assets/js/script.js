@@ -1,4 +1,4 @@
-//Game button Variables
+/**Game button Variables*/
 const playAgainButton = document.getElementById("play-again");
 const endButton = document.getElementById("end-game");
 const nextButton = document.getElementById("next");
@@ -14,7 +14,7 @@ const btnHard = document.getElementById("btn-hard");
 const levelButtons = [btnEasy, btnMedium, btnHard];
 const button = document.getElementById("btn-level");
 
-//Quiz Questions,answers and responses
+/**Quiz Questions,answers and responses*/
 const easyQuestions = [
    {
       question: "Totoro is a large, fluffy forest spirit.",
@@ -177,34 +177,36 @@ const hardQuestions = [
 let currentQuestionIndex = 0;
 let currentQuestion = " ";
 
-
+/** Toggles how to play instructions dropdown */
 howToButton.addEventListener("click", function () {
    document.getElementById("myDropdown").classList.toggle("hide");
 });
 
-//To check that the user has entered a player name to be able to start the game,
-//tutorial used as guide from https://www.freecodecamp.org/news/form-validation-with-html5-and-javascript/
-
+/**Check the user has entered a player name to start the game,
+* tutorial used as guide from
+* https://www.freecodecamp.org/news/form-validation-with-html5-and-javascript/ */
 startButton.addEventListener("click", function (e) {
    e.preventDefault();
    const playerName = document.getElementById("playername");
 
+   //Checks and validates that a user has entered a player name
    if (!playerName.value) {
       alert("Please enter player name to continue!");
    } else {
+      //Hides welcome page and displays the game page
       document.getElementById("welcome-page").classList.add("hide");
       document.getElementById("game-page").classList.remove("hide");
       playerNameDisplay();
-
    }
 });
 
+/**Displays the start button after level selection */
 function startButtonAdd() {
    startButton.classList.remove("hide");
 }
 
 
-/**Used https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach 
+/**Used https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
  *  as a guide */
 levelButtons.forEach(button => {
    button.addEventListener("click", function () {
@@ -215,7 +217,9 @@ levelButtons.forEach(button => {
 });
 
 
-/** Function to show questions from the selected level */
+/** Shows questions from the selected level
+ * @param {string} levelSelect - The level difficulty selected "easy", "medium", "hard"
+ */
 function showQuestion(levelSelect) {
 
    if (levelSelect === "easy") {
@@ -236,54 +240,60 @@ function showQuestion(levelSelect) {
    }
 }
 
-//To display the next question when next button clicked 
+/** Navigates to the next question
+ * ends the game if reached the end of the qustions
+ */
 nextButton.addEventListener("click", function () {
    if (currentQuestionIndex < 9) {
       currentQuestionIndex++;
       let levelSelect = nextButton.getAttribute("data-type");
       showQuestion(levelSelect);
-      addButton();
+      addButton(); //Show true/false buttons
    } else {
-      endGame();
+      endGame(); //Displays thank you page, end of game
    }
 });
 
 
-//True and false button event listener to check answer
+/**True and false button event listener to check answer*/
 trueButton.addEventListener("click", function () {
    checkAnswer("true");
-   removeButton();
+   removeButton(); //Hide buttons after answer selection
 });
 
 falseButton.addEventListener("click", function () {
    checkAnswer("false");
-   removeButton();
+   removeButton(); //Hide buttons after answer selection
 });
 
+/**Hide the true/false buttons*/
 function removeButton() {
    let buttonContainer = document.getElementById("true-false-buttons");
    buttonContainer.classList.add("hide");
 }
 
+/**Show the true/false buttons*/
 function addButton() {
    let buttonContainer = document.getElementById("true-false-buttons");
    buttonContainer.classList.remove("hide");
 }
 
 
-/**Checks answer and updates score if correct, displays text with correct answer and why if incorrect */
+/**Checks answer and updates score if correct, displays text with correct answer and why if incorrect,
+ * @param {string} answer - The users selected answer "true" or "false"
+*/
 function checkAnswer(answer) {
    let questionAnswer = currentQuestion.answer;
    if (currentQuestion.answer === answer) {
       displayQuestion.innerHTML = "That's Correct!";
-      updateScore();
+      updateScore(); //Increments the score
    } else {
       displayQuestion.innerHTML = "The correct answer is" + " " + `${questionAnswer}` + ", " + `${currentQuestion.response}`;
    }
 }
 
 
-/**Gets the player name input and displays player name */
+/**Gets the player name input and displays player name*/
 function playerNameDisplay() {
    let playerInput = document.getElementById("playername").value;
    document.getElementById("player").innerHTML = playerInput;
@@ -295,7 +305,7 @@ function updateScore() {
    document.getElementById("score").innerHTML = ++previousScore;
 }
 
-/** Gets current score to display final score */
+/**Gets current score to display final score*/
 function finalScore() {
    let finalScore = document.getElementById("score").innerHTML;
    document.getElementById("final-score").innerHTML = finalScore;
@@ -309,20 +319,20 @@ endButton.addEventListener("click", function () {
    finishGame();
 });
 
-/** Play again button restarts the game, displays welcome page with new selection message */
+/**Play again button restarts the game, displays welcome page with new selection message*/
 playAgainButton.addEventListener("click", function () {
    finishGame();
    document.getElementById("level-message").innerHTML = "Choose Your Next Level!";
 });
 
-/**Home button returns back to welcome page */
+/**Home button returns back to welcome page*/
 homeButton.addEventListener("click", function () {
    finishGame();
    document.getElementById("game-page").classList.add("hide");
 });
 
-/** Resets the game back to initial state, 
- * Clears score, resets current question index, shows welcome page */
+/**Resets the game back to initial state,
+ * Clears score, resets current question index, shows welcome page*/
 function finishGame() {
    document.getElementById("thank-you").classList.add("hide");
    document.getElementById("welcome-page").classList.remove("hide");
