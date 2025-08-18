@@ -154,11 +154,10 @@ button hover effect tutorial from https://www.30secondsofcode.org/*/
     }
 
     #btn-instructions {
-        display: flex;
-        margin: auto;
-        margin-top: 10px;
+        margin: 10px;
     }
-    .mobile-font{
+
+    .mobile-font {
         font-size: 1rem;
     }
 }
