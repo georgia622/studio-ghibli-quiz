@@ -11,6 +11,8 @@ const howToButton = document.getElementById("btn-instructions");
 const btnMedium = document.getElementById("btn-medium");
 const btnEasy = document.getElementById("btn-easy");
 const btnHard = document.getElementById("btn-hard");
+const levelButtons = [btnEasy, btnMedium, btnHard];
+const button = document.getElementById("btn-level");
 
 //Quiz Questions,answers and responses
 const easyQuestions = [
@@ -201,8 +203,6 @@ function startButtonAdd() {
    startButton.classList.remove("hide");
 }
 
-const levelButtons = [btnEasy, btnMedium, btnHard];
-const button = document.getElementById("btn-level");
 
 /**Used https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach 
  *  as a guide */
