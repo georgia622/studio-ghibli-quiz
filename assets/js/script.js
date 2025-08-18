@@ -201,7 +201,9 @@ function startButtonAdd() {
    startButton.classList.remove("hide");
 }
 
-//Get level selection on click 
+const levelButtons = [btnEasy, btnMedium, btnHard];
+
+/* //Get level selection on click 
 btnEasy.addEventListener("click", function () {
    let levelSelect = this.getAttribute("data-type");
    showQuestion(levelSelect);
@@ -220,7 +222,7 @@ btnHard.addEventListener("click", function () {
    let levelSelect = this.getAttribute("data-type");
    showQuestion(levelSelect);
    startButtonAdd();
-});
+}); */
 
 
 
