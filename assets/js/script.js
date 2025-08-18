@@ -214,29 +214,6 @@ levelButtons.forEach(button => {
    });
 });
 
-/* //Get level selection on click 
-btnEasy.addEventListener("click", function () {
-   let levelSelect = this.getAttribute("data-type");
-   showQuestion(levelSelect);
-   startButtonAdd();
-});
-
-
-btnMedium.addEventListener("click", function () {
-   let levelSelect = this.getAttribute("data-type");
-   showQuestion(levelSelect);
-   startButtonAdd();
-});
-
-
-btnHard.addEventListener("click", function () {
-   let levelSelect = this.getAttribute("data-type");
-   showQuestion(levelSelect);
-   startButtonAdd();
-}); */
-
-
-
 
 /** Function to show questions from the selected level */
 function showQuestion(levelSelect) {
