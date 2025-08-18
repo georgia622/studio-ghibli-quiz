@@ -345,6 +345,7 @@ function finishGame() {
    document.getElementById("score").innerHTML = "0";
    document.getElementById("playername").innerHTML = " ";
    startButton.classList.add("hide");
+   addButton();
 }
 
 
