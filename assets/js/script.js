@@ -193,6 +193,7 @@ startButton.addEventListener("click", function (e) {
       document.getElementById("welcome-page").classList.add("hide");
       document.getElementById("game-page").classList.remove("hide");
       playerNameDisplay();
+
    }
 });
 
@@ -201,7 +202,6 @@ function startButtonAdd() {
 }
 
 //Get level selection on click 
-
 btnEasy.addEventListener("click", function () {
    let levelSelect = this.getAttribute("data-type");
    showQuestion(levelSelect);
@@ -223,6 +223,8 @@ btnHard.addEventListener("click", function () {
 });
 
 
+
+
 /** Function to show questions from the selected level */
 function showQuestion(levelSelect) {
 
@@ -230,14 +232,17 @@ function showQuestion(levelSelect) {
       currentQuestion = easyQuestions[currentQuestionIndex];
       displayQuestion.innerHTML = `${currentQuestion.question}`;
       nextButton.setAttribute("data-type", "easy");
+      document.getElementById("level").innerHTML = "Easy";
    } else if (levelSelect === "medium") {
       currentQuestion = mediumQuestions[currentQuestionIndex];
       displayQuestion.innerHTML = `${currentQuestion.question}`;
       nextButton.setAttribute("data-type", "medium");
+      document.getElementById("level").innerHTML = "Medium";
    } else if (levelSelect === "hard") {
       currentQuestion = hardQuestions[currentQuestionIndex];
       displayQuestion.innerHTML = `${currentQuestion.question}`;
       nextButton.setAttribute("data-type", "hard");
+      document.getElementById("level").innerHTML = "Hard";
    }
 }
 
