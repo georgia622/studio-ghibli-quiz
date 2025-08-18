@@ -248,7 +248,8 @@ nextButton.addEventListener("click", function () {
       currentQuestionIndex++;
       let levelSelect = nextButton.getAttribute("data-type");
       showQuestion(levelSelect);
-      addButton(); //Show true/false buttons
+      addTrueButton(); 
+      addFalseButton(); //Show true/false buttons
    } else {
       endGame(); //Displays thank you page, end of game
    }
@@ -258,26 +259,33 @@ nextButton.addEventListener("click", function () {
 /**True and false button event listener to check answer*/
 trueButton.addEventListener("click", function () {
    checkAnswer("true");
-   removeButton(); //Hide buttons after answer selection
+   removeFalseButton(); //Hide buttons after answer selection
 });
 
 falseButton.addEventListener("click", function () {
    checkAnswer("false");
-   removeButton(); //Hide buttons after answer selection
+   removeTrueButton(); //Hide buttons after answer selection
 });
 
 /**Hide the true/false buttons*/
-function removeButton() {
-   let buttonContainer = document.getElementById("true-false-buttons");
+function removeTrueButton() {
+   let buttonContainer = document.getElementById("true-button");
+   buttonContainer.classList.add("hide");
+}
+function removeFalseButton() {
+   let buttonContainer = document.getElementById("false-button");
    buttonContainer.classList.add("hide");
 }
 
 /**Show the true/false buttons*/
-function addButton() {
-   let buttonContainer = document.getElementById("true-false-buttons");
+function addTrueButton() {
+   let buttonContainer = document.getElementById("true-button");
    buttonContainer.classList.remove("hide");
 }
-
+function addFalseButton() {
+   let buttonContainer = document.getElementById("false-button");
+   buttonContainer.classList.remove("hide");
+}
 
 /**Checks answer and updates score if correct, displays text with correct answer and why if incorrect,
  * @param {string} answer - The users selected answer "true" or "false"
