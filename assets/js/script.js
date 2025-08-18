@@ -176,7 +176,7 @@ let currentQuestionIndex = 0;
 let currentQuestion = " ";
 
 
-howToButton.addEventListener("click", function (){
+howToButton.addEventListener("click", function () {
    document.getElementById("myDropdown").classList.toggle("hide");
 });
 
@@ -188,7 +188,7 @@ startButton.addEventListener("click", function (e) {
    const playerName = document.getElementById("playername");
 
    if (!playerName.value) {
-       alert("Please enter player name to continue!");
+      alert("Please enter player name to continue!");
    } else {
       document.getElementById("welcome-page").classList.add("hide");
       document.getElementById("game-page").classList.remove("hide");
@@ -202,6 +202,17 @@ function startButtonAdd() {
 }
 
 const levelButtons = [btnEasy, btnMedium, btnHard];
+const button = document.getElementById("btn-level");
+
+/**Used https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach 
+ *  as a guide */
+levelButtons.forEach(button => {
+   button.addEventListener("click", function () {
+      let levelSelect = this.getAttribute("data-type");
+      showQuestion(levelSelect);
+      startButtonAdd();
+   });
+});
 
 /* //Get level selection on click 
 btnEasy.addEventListener("click", function () {
@@ -295,7 +306,7 @@ function checkAnswer(answer) {
 }
 
 
-function playerNameDisplay (){
+function playerNameDisplay() {
    let playerInput = document.getElementById("playername").value;
    document.getElementById("player").innerHTML = playerInput;
 }
@@ -311,23 +322,23 @@ function finalScore() {
 }
 
 //Event listener for end game button, takes user back to welcome page, clears score and player name
-endButton.addEventListener("click", function() {
+endButton.addEventListener("click", function () {
    document.getElementById("level-message").innerHTML = "Pick your path through the Ghibli world!";
    finishGame();
 });
 
-playAgainButton.addEventListener("click", function (){
+playAgainButton.addEventListener("click", function () {
    finishGame();
    document.getElementById("level-message").innerHTML = "Choose Your Next Level!";
 });
 
-homeButton.addEventListener("click", function (){
+homeButton.addEventListener("click", function () {
    finishGame();
    document.getElementById("game-page").classList.add("hide");
 });
 
 /** Clears the score and sets the question index back to 0, removes hide class from welcome page */
-function finishGame (){
+function finishGame() {
    document.getElementById("thank-you").classList.add("hide");
    document.getElementById("welcome-page").classList.remove("hide");
    currentQuestionIndex = 0;
