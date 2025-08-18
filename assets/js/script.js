@@ -348,7 +348,8 @@ function finishGame() {
    document.getElementById("score").innerHTML = "0"; //Clears score
    document.getElementById("playername").innerHTML = " "; //Clears playername
    startButton.classList.add("hide"); //Start button hiden until level is selected
-   addButton();
+   addTrueButton();
+   addFalseButton();
 }
 
 
