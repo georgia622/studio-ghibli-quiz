@@ -208,7 +208,7 @@ function startButtonAdd() {
 
 /**Used https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
  *  as a guide */
-levelButtons.forEach(button => {
+levelButtons.forEach((button) => {
    button.addEventListener("click", function () {
       let levelSelect = this.getAttribute("data-type");
       showQuestion(levelSelect);
