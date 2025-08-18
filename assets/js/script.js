@@ -283,45 +283,53 @@ function checkAnswer(answer) {
 }
 
 
+/**Gets the player name input and displays player name */
 function playerNameDisplay() {
    let playerInput = document.getElementById("playername").value;
    document.getElementById("player").innerHTML = playerInput;
 }
 
+/**Increments and displays score */
 function updateScore() {
    let previousScore = document.getElementById("score").innerHTML;
    document.getElementById("score").innerHTML = ++previousScore;
 }
 
+/** Gets current score to display final score */
 function finalScore() {
    let finalScore = document.getElementById("score").innerHTML;
    document.getElementById("final-score").innerHTML = finalScore;
 }
 
-//Event listener for end game button, takes user back to welcome page, clears score and player name
+
+
+/**End game button restarts game, displays welcome page with original welcome message*/
 endButton.addEventListener("click", function () {
    document.getElementById("level-message").innerHTML = "Pick your path through the Ghibli world!";
    finishGame();
 });
 
+/** Play again button restarts the game, displays welcome page with new selection message */
 playAgainButton.addEventListener("click", function () {
    finishGame();
    document.getElementById("level-message").innerHTML = "Choose Your Next Level!";
 });
 
+/**Home button returns back to welcome page */
 homeButton.addEventListener("click", function () {
    finishGame();
    document.getElementById("game-page").classList.add("hide");
 });
 
-/** Clears the score and sets the question index back to 0, removes hide class from welcome page */
+/** Resets the game back to initial state, 
+ * Clears score, resets current question index, shows welcome page */
 function finishGame() {
    document.getElementById("thank-you").classList.add("hide");
    document.getElementById("welcome-page").classList.remove("hide");
-   currentQuestionIndex = 0;
-   document.getElementById("score").innerHTML = "0";
-   document.getElementById("playername").innerHTML = " ";
-   startButton.classList.add("hide");
+   currentQuestionIndex = 0; //Resets to first question
+   document.getElementById("score").innerHTML = "0"; //Clears score
+   document.getElementById("playername").innerHTML = " "; //Clears playername
+   startButton.classList.add("hide"); //Start button hiden until level is selected
    addButton();
 }
 
@@ -330,5 +338,5 @@ function finishGame() {
 function endGame() {
    document.getElementById("game-page").classList.add("hide");
    document.getElementById("thank-you").classList.remove("hide");
-   finalScore();
+   finalScore(); //Displays the final score 
 }
