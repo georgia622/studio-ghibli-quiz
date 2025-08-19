@@ -123,52 +123,52 @@ const mediumQuestions = [
 
 const hardQuestions = [
    {
-      question: "The original Japanese title of Spirited Away is Sen to Chihiro no Kamikakushi.",
+      question: "1. The original Japanese title of Spirited Away is Sen to Chihiro no Kamikakushi.",
       answer: "true",
       response: "this translates to Sen and Chihiro's Spiriting Away or Sen and Chihiro's Disappearance"
    },
    {
-      question: "In Nausicaä of the Valley of the Wind, Nausicaä rides a glider called a Möwe.",
+      question: "2. In Nausicaä of the Valley of the Wind, Nausicaä rides a glider called a Möwe.",
       answer: "true",
       response: "the Möwe is a personal, jet-powered glider that Nausicaä uses to navigate the post-apocalyptic world of the film."
    },
    {
-      question: "Only Yesterday switches between 1980s and 1970s timelines.",
+      question: "3. Only Yesterday switches between 1980s and 1970s timelines.",
       answer: "true",
       response: "the film switches between two distinct time periods: the present, set in 1982, and the past, specifically 1966, when the protagonist, Taeko, was ten years old. "
    },
    {
-      question: "Ghibli co-founder Isao Takahata directed Howl's Moving Castle.",
+      question: "4. Ghibli co-founder Isao Takahata directed Howl's Moving Castle.",
       answer: "false",
       response: "Isao Takahata did not direct Howl's Moving Castle. That film was directed by Hayao Miyazaki."
    },
    {
-      question: "The Baron from The Cat Returns also appears in Whisper of the Heart.",
-      answer: "false",
+      question: "5. The Baron from The Cat Returns also appears in Whisper of the Heart.",
+      answer: "true",
       response: "in Whisper of the Heart, he appears as a statue in an antique shop, while in The Cat Returns, he comes to life and plays a more active role."
    },
    {
-      question: "Tales from Earthsea was directed by Hayao Miyazaki.",
+      question: "6. Tales from Earthsea was directed by Hayao Miyazaki.",
       answer: "false",
       response: "the film was directed by his son, Gorō Miyazaki, in his directorial debut."
    },
    {
-      question: "In Princess Mononoke, the Forest Spirit dies and brings new life at the same time.",
+      question: "7. In Princess Mononoke, the Forest Spirit dies and brings new life at the same time.",
       answer: "true",
       response: "yes, in Princess Mononoke, the Forest Spirit dies and brings new life simultaneously."
    },
    {
-      question: "From Up on Poppy Hill is set during the 1980s economic boom.",
+      question: "8. From Up on Poppy Hill is set during the 1980s economic boom.",
       answer: "false",
       response: "the film is set in 1963, in the period leading up to the 1964 Tokyo Olympics."
    },
    {
-      question: "When Marnie Was There is based on a British novel.",
+      question: "9. When Marnie Was There is based on a British novel.",
       answer: "true",
       response: "it is based on a 1967 novel of the same name by British author Joan G. Robinson."
    },
    {
-      question: "The Tale of the Princess Kaguya was the last Ghibli film directed by Hayao Miyazaki.",
+      question: "10. The Tale of the Princess Kaguya was the last Ghibli film directed by Hayao Miyazaki.",
       answer: "false",
       response: "The Tale of the Princess Kaguya was directed by Isao Takahata, not Hayao Miyazaki. Hayao Miyazaki's final film before his retirement was The Wind Rises."
    }
