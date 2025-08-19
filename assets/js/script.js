@@ -194,13 +194,18 @@ startButton.addEventListener("click", function (e) {
    if (!playerName.value) {
       validationError.classList.remove("hide");
    } else {
-      //Hides welcome page and displays the game page
-      document.getElementById("welcome-page").classList.add("hide");
-      document.getElementById("game-page").classList.remove("hide");
-      validationError.classList.add("hide");
+      startGame();
       playerNameDisplay();
    }
 });
+
+/**Shows game page and hides validation error message */
+function startGame() {
+   //Hides welcome page and displays the game page
+   document.getElementById("welcome-page").classList.add("hide");
+   document.getElementById("game-page").classList.remove("hide");
+   validationError.classList.add("hide");
+}
 
 /**Displays the start button after level selection */
 function startButtonAdd() {
@@ -250,7 +255,7 @@ nextButton.addEventListener("click", function () {
       currentQuestionIndex++;
       let levelSelect = nextButton.getAttribute("data-type");
       showQuestion(levelSelect);
-      addTrueButton(); 
+      addTrueButton();
       addFalseButton(); //Show true/false buttons
    } else {
       endGame(); //Displays thank you page, end of game
