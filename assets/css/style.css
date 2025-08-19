@@ -48,7 +48,7 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     width: 40%;
-    height: 45%;
+    height: 50%;
     text-align: center;
     background-color: rgb(28, 52, 47, 0.9);
     border-radius: 12px;
@@ -150,6 +150,10 @@ button hover effect tutorial from https://www.30secondsofcode.org/*/
     font-weight: bold;
 }
 
+.image-size {
+    width:auto;
+    height: 100px;
+}
 /*Media Queries for mobile screens*/
 @media screen and (max-width: 800px) {
     .container-styling {
