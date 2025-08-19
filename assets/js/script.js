@@ -17,52 +17,52 @@ const button = document.getElementById("btn-level");
 /**Quiz Questions,answers and responses*/
 const easyQuestions = [
    {
-      question: "Totoro is a large, fluffy forest spirit.",
+      question: "1. Totoro is a large, fluffy forest spirit.",
       answer: "true",
       response: "Totoro is indeed a large, fluffy forest spirit from the animated film My Neighbor Totoro."
    },
    {
-      question: "Kiki delivers packages on a flying vacuum cleaner.",
+      question: "2. Kiki delivers packages on a flying vacuum cleaner.",
       answer: "false",
       response: "she flies on a broomstick."
    },
    {
-      question: "Ponyo is a goldfish who wants to become human.",
+      question: "3. Ponyo is a goldfish who wants to become human.",
       answer: "true",
       response: "the movie Ponyo centers around a goldfish princess and her wish to be a human girl."
    },
    {
-      question: "Spirited Away features a bathhouse for spirits.",
+      question: "4. Spirited Away features a bathhouse for spirits.",
       answer: "true",
       response: "yes, Spirited Away features a bathhouse called Aburaya (also known as the Bathhouse) that serves as a place for spirits to relax and rejuvenate"
    },
    {
-      question: "Jiji is Kiki's talking cat companion.",
+      question: "5. Jiji is Kiki's talking cat companion.",
       answer: "true",
       response: "Jiji is Kiki's talking cat companion in the movie Kiki's Delivery Service. He is a black cat and Kiki's familiar spirit, providing her with companionship."
    },
    {
-      question: "In My Neighbor Totoro, there is a magical Catbus.",
+      question: "6. In My Neighbor Totoro, there is a magical Catbus.",
       answer: "true",
       response: "there is a magical, anthropomorphic cat bus in the movie My Neighbor Totoro. It's a large, grinning, twelve-legged cat with a bushy tail and a hollow body that serves as a bus."
    },
    {
-      question: "Howl's Moving Castle can walk on legs.",
+      question: "7. Howl's Moving Castle can walk on legs.",
       answer: "true",
       response: "in the movie Howl's Moving Castle, the castle does walk on legs, these legs are used to propel the castle across the landscape, though it is also capable of flight."
    },
    {
-      question: "Soot sprites appear in both Spirited Away and My Neighbor Totoro.",
+      question: "8. Soot sprites appear in both Spirited Away and My Neighbor Totoro.",
       answer: "true",
       response: "Soot sprites, also known as Susuwatari or Makkurokurosuke, make appearances in both Studio Ghibli films"
    },
    {
-      question: "Studio Ghibli films are all in English originally.",
+      question: "9. Studio Ghibli films are all in English originally.",
       answer: "false",
       response: "Studio Ghibli films are not originally in English. They are Japanese animated films and are primarily voiced in Japanese. "
    },
    {
-      question: "Grave of the Fireflies is a comedy.",
+      question: "10. Grave of the Fireflies is a comedy.",
       answer: "false",
       response: "It is a highly acclaimed and intensely emotional animated war film."
    }
