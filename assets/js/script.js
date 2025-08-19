@@ -265,23 +265,23 @@ nextButton.addEventListener("click", function () {
 
 /**True and false button event listener to check answer*/
 trueButton.addEventListener("click", checkTrue);
+falseButton.addEventListener("click", checkFalse);
+
 
 function checkTrue() {
    checkAnswer("true");
-   removeAnswerButton(); //Hide buttons after answer selection
-};
-
-falseButton.addEventListener("click", checkFalse);
+   removeAnswerButton(); //Removes event listener to prevent increasing of score
+}
 
 function checkFalse() {
    checkAnswer("false");
-   removeAnswerButton(); //Hide buttons after answer selection
-};
+   removeAnswerButton(); //Removes event listener to prevent increasing of score
+}
 
 
 function removeAnswerButton() {
-   trueButton.removeEventListener("click", checkTrue);
-   falseButton.removeEventListener("click", checkFalse);
+   
+   document.getElementById("answerImage").classList.remove("hide");
 }
 
 
@@ -346,8 +346,6 @@ function finishGame() {
    document.getElementById("score").innerHTML = "0"; //Clears score
    document.getElementById("playername").innerHTML = " "; //Clears playername
    startButton.classList.add("hide"); //Start button hiden until level is selected
-   addTrueButton();
-   addFalseButton();
 }
 
 
