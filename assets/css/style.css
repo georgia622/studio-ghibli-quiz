@@ -151,9 +151,10 @@ button hover effect tutorial from https://www.30secondsofcode.org/*/
 }
 
 .image-size {
-    width:auto;
-    height: 100px;
+    width: auto;
+    height: 80px;
 }
+
 /*Media Queries for mobile screens*/
 @media screen and (max-width: 800px) {
     .container-styling {
