@@ -280,7 +280,8 @@ function checkFalse() {
 
 
 function removeAnswerButton() {
-   
+   document.getElementById("true-button").classList.add("hide")
+   document.getElementById("false-button").classList.add("hide")
    document.getElementById("answerImage").classList.remove("hide");
 }
 
