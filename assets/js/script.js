@@ -265,15 +265,18 @@ nextButton.addEventListener("click", function () {
 
 /**True and false button event listener to check answer*/
 trueButton.addEventListener("click", checkTrue);
+
 function checkTrue() {
    checkAnswer("true");
    removeAnswerButton(); //Hide buttons after answer selection
 };
 
-falseButton.addEventListener("click", function () {
+falseButton.addEventListener("click", checkFalse);
+
+function checkFalse() {
    checkAnswer("false");
-   removeTrueButton(); //Hide buttons after answer selection
-});
+   removeAnswerButton(); //Hide buttons after answer selection
+};
 
 /**Hide the true/false buttons*/
 /**function removeTrueButton() {
@@ -295,7 +298,7 @@ function addFalseButton() {
 
    function removeAnswerButton (){
       trueButton.removeEventListener("click", checkTrue);
-      falseButton.removeEventListener("click");
+      falseButton.removeEventListener("click", checkFalse);
    }
 
 /**Checks answer and updates score if correct, displays text with correct answer and why if incorrect,
