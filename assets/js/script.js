@@ -264,10 +264,11 @@ nextButton.addEventListener("click", function () {
 
 
 /**True and false button event listener to check answer*/
-trueButton.addEventListener("click", function () {
+trueButton.addEventListener("click", checkTrue);
+function checkTrue() {
    checkAnswer("true");
-   removeFalseButton(); //Hide buttons after answer selection
-});
+   removeAnswerButton(); //Hide buttons after answer selection
+};
 
 falseButton.addEventListener("click", function () {
    checkAnswer("false");
@@ -275,24 +276,27 @@ falseButton.addEventListener("click", function () {
 });
 
 /**Hide the true/false buttons*/
-function removeTrueButton() {
-   let buttonContainer = document.getElementById("true-button");
-   buttonContainer.classList.add("hide");
+/**function removeTrueButton() {
+   trueButton.classList.add("hide");
 }
 function removeFalseButton() {
    let buttonContainer = document.getElementById("false-button");
    buttonContainer.classList.add("hide");
 }
 
-/**Show the true/false buttons*/
+/**Show the true/false buttons
 function addTrueButton() {
-   let buttonContainer = document.getElementById("true-button");
-   buttonContainer.classList.remove("hide");
+   trueButton.classList.remove("hide");
 }
 function addFalseButton() {
    let buttonContainer = document.getElementById("false-button");
    buttonContainer.classList.remove("hide");
-}
+ }*/
+
+   function removeAnswerButton (){
+      trueButton.removeEventListener("click", checkTrue);
+      falseButton.removeEventListener("click");
+   }
 
 /**Checks answer and updates score if correct, displays text with correct answer and why if incorrect,
  * @param {string} answer - The users selected answer "true" or "false"
