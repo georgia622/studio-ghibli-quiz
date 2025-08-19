@@ -278,23 +278,6 @@ function checkFalse() {
    removeAnswerButton(); //Hide buttons after answer selection
 };
 
-/**Hide the true/false buttons*/
-/**function removeTrueButton() {
-   trueButton.classList.add("hide");
-}
-function removeFalseButton() {
-   let buttonContainer = document.getElementById("false-button");
-   buttonContainer.classList.add("hide");
-}
-
-/**Show the true/false buttons
-function addTrueButton() {
-   trueButton.classList.remove("hide");
-}
-function addFalseButton() {
-   let buttonContainer = document.getElementById("false-button");
-   buttonContainer.classList.remove("hide");
- }*/
 
 function removeAnswerButton() {
    trueButton.removeEventListener("click", checkTrue);
