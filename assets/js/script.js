@@ -255,8 +255,7 @@ nextButton.addEventListener("click", function () {
       currentQuestionIndex++;
       let levelSelect = nextButton.getAttribute("data-type");
       showQuestion(levelSelect);
-      trueButton.addEventListener("click", checkTrue);
-      falseButton.addEventListener("click", checkFalse);
+      addAnswerButton();
    } else {
       endGame(); //Displays thank you page, end of game
    }
@@ -270,12 +269,12 @@ falseButton.addEventListener("click", checkFalse);
 
 function checkTrue() {
    checkAnswer("true");
-   removeAnswerButton(); //Removes event listener to prevent increasing of score
+   removeAnswerButton(); //Removed true/false buttons
 }
 
 function checkFalse() {
    checkAnswer("false");
-   removeAnswerButton(); //Removes event listener to prevent increasing of score
+   removeAnswerButton(); //Removed true/false buttons
 }
 
 
@@ -285,6 +284,11 @@ function removeAnswerButton() {
    document.getElementById("answerImage").classList.remove("hide");
 }
 
+function addAnswerButton() {
+    document.getElementById("true-button").classList.remove("hide")
+   document.getElementById("false-button").classList.remove("hide")
+   document.getElementById("answerImage").classList.add("hide");
+}
 
 /**Checks answer and updates score if correct, displays text with correct answer and why if incorrect,
  * @param {string} answer - The users selected answer "true" or "false"
@@ -347,6 +351,7 @@ function finishGame() {
    document.getElementById("score").innerHTML = "0"; //Clears score
    document.getElementById("playername").innerHTML = " "; //Clears playername
    startButton.classList.add("hide"); //Start button hiden until level is selected
+   addAnswerButton();
 }
 
 
