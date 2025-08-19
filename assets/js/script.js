@@ -13,6 +13,7 @@ const btnEasy = document.getElementById("btn-easy");
 const btnHard = document.getElementById("btn-hard");
 const levelButtons = [btnEasy, btnMedium, btnHard];
 const button = document.getElementById("btn-level");
+const validationError = document.getElementById("validationError");
 
 /**Quiz Questions,answers and responses*/
 const easyQuestions = [
@@ -191,11 +192,12 @@ startButton.addEventListener("click", function (e) {
 
    //Checks and validates that a user has entered a player name
    if (!playerName.value) {
-      alert("Please enter player name to continue!");
+      validationError.classList.remove("hide");
    } else {
       //Hides welcome page and displays the game page
       document.getElementById("welcome-page").classList.add("hide");
       document.getElementById("game-page").classList.remove("hide");
+      validationError.classList.add("hide");
       playerNameDisplay();
    }
 });
