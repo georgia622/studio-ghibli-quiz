@@ -178,10 +178,13 @@ const hardQuestions = [
 let currentQuestionIndex = 0;
 let currentQuestion = " ";
 
+
+
 /** Toggles how to play instructions dropdown */
 howToButton.addEventListener("click", function () {
    document.getElementById("myDropdown").classList.toggle("hide");
 });
+
 
 /**Check the user has entered a player name to start the game,
 * tutorial used as guide from
@@ -266,29 +269,32 @@ nextButton.addEventListener("click", function () {
 trueButton.addEventListener("click", checkTrue);
 falseButton.addEventListener("click", checkFalse);
 
-
+/**Checks if true was the correct answer and hides buttons*/
 function checkTrue() {
    checkAnswer("true");
-   removeAnswerButton(); //Removed true/false buttons
+   removeAnswerButton(); //Removes true/false buttons
 }
 
+/**Checks if false was the correct answer and hides buttons*/
 function checkFalse() {
    checkAnswer("false");
-   removeAnswerButton(); //Removed true/false buttons
+   removeAnswerButton(); //Removes true/false buttons
 }
 
-
+/**Hides true/false buttons*/
 function removeAnswerButton() {
-   document.getElementById("true-button").classList.add("hide")
-   document.getElementById("false-button").classList.add("hide")
-   document.getElementById("answerImage").classList.remove("hide");
+   document.getElementById("true-button").classList.add("hide");
+   document.getElementById("false-button").classList.add("hide");
 }
 
+/**Adds true/false buttons back and hides the images on display*/
 function addAnswerButton() {
-    document.getElementById("true-button").classList.remove("hide")
-   document.getElementById("false-button").classList.remove("hide")
-   document.getElementById("answerImage").classList.add("hide");
+   document.getElementById("true-button").classList.remove("hide");
+   document.getElementById("false-button").classList.remove("hide");
+   document.getElementById("answerImage").classList.add("hide"); //Hides correct answer image
+   document.getElementById("wrong-answer-img").classList.add("hide"); //Hides wrong answer image
 }
+
 
 /**Checks answer and updates score if correct, displays text with correct answer and why if incorrect,
  * @param {string} answer - The users selected answer "true" or "false"
@@ -298,7 +304,9 @@ function checkAnswer(answer) {
    if (currentQuestion.answer === answer) {
       displayQuestion.innerHTML = "That's Correct!";
       updateScore(); //Increments the score
+      document.getElementById("answerImage").classList.remove("hide");
    } else {
+      document.getElementById("wrong-answer-img").classList.remove("hide");
       displayQuestion.innerHTML = "The correct answer is" + " " + `${questionAnswer}` + ", " + `${currentQuestion.response}`;
    }
 }
