@@ -144,6 +144,12 @@ button hover effect tutorial from https://www.30secondsofcode.org/*/
     color: rgb(255, 206, 133);
 }
 
+#validationError {
+    color:#ed5d5d;
+    font-style: italic;
+    font-weight: bold;
+}
+
 
 /*Media Queries for mobile screens*/
 @media screen and (max-width: 800px) {
