@@ -255,8 +255,8 @@ nextButton.addEventListener("click", function () {
       currentQuestionIndex++;
       let levelSelect = nextButton.getAttribute("data-type");
       showQuestion(levelSelect);
-      addTrueButton();
-      addFalseButton(); //Show true/false buttons
+      trueButton.addEventListener("click", checkTrue);
+      falseButton.addEventListener("click", checkFalse);
    } else {
       endGame(); //Displays thank you page, end of game
    }
@@ -296,10 +296,11 @@ function addFalseButton() {
    buttonContainer.classList.remove("hide");
  }*/
 
-   function removeAnswerButton (){
-      trueButton.removeEventListener("click", checkTrue);
-      falseButton.removeEventListener("click", checkFalse);
-   }
+function removeAnswerButton() {
+   trueButton.removeEventListener("click", checkTrue);
+   falseButton.removeEventListener("click", checkFalse);
+}
+
 
 /**Checks answer and updates score if correct, displays text with correct answer and why if incorrect,
  * @param {string} answer - The users selected answer "true" or "false"
