@@ -12,7 +12,6 @@ const btnMedium = document.getElementById("btn-medium");
 const btnEasy = document.getElementById("btn-easy");
 const btnHard = document.getElementById("btn-hard");
 const levelButtons = [btnEasy, btnMedium, btnHard];
-const button = document.getElementById("btn-level");
 const validationError = document.getElementById("validationError");
 
 /**Quiz Questions,answers and responses*/
