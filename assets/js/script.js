@@ -326,8 +326,8 @@ function updateScore() {
 
 /**Gets current score to display final score*/
 function finalScore() {
-   let finalScore = document.getElementById("score").innerHTML;
-   document.getElementById("final-score").innerHTML = finalScore;
+   let finalScoreResult = document.getElementById("score").innerHTML;
+   document.getElementById("final-score").innerHTML = finalScoreResult;
 }
 
 
@@ -367,5 +367,5 @@ function finishGame() {
 function endGame() {
    document.getElementById("game-page").classList.add("hide");
    document.getElementById("thank-you").classList.remove("hide");
-   finalScore(); //Displays the final score 
+   finalScore(); //Displays the final score
 }
