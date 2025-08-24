@@ -26,6 +26,7 @@ const levelMessage = document.querySelector("#level-message");
 const thankYouPage = document.querySelector("#thank-you");
 const score = document.querySelector("#score");
 const finalScoreDisplay = document.querySelector("#final-score");
+const levelDisplay = document.querySelector("#level");
 
 let currentQuestionIndex = 0;
 let currentQuestion = " ";
@@ -192,15 +193,14 @@ const hardQuestions = [
 
 
 
-howToButton.addEventListener("click", function () {
+howToButton.addEventListener("click", () => {
    dropDownMenu.classList.toggle("hide");
 });
 
 
 
-startButton.addEventListener("click", function (e) {
+startButton.addEventListener("click", (e) => {
    e.preventDefault();
-   
    if (!playerName.value) {
       validationError.classList.remove("hide");
    } else {
@@ -211,7 +211,8 @@ startButton.addEventListener("click", function (e) {
 
 
 /**Shows game page and 
- * hides validation error message */
+ * hides validation error message
+ **/
 function startGame() {
    welcomePage.classList.add("hide");
    gamePage.classList.remove("hide");
@@ -220,7 +221,8 @@ function startGame() {
 
 
 /**Displays the start button 
- * after level selection */
+ * after level selection 
+ **/
 function startButtonAdd() {
    startButton.classList.remove("hide");
 }
@@ -245,22 +247,22 @@ function showQuestion(levelSelect) {
       currentQuestion = easyQuestions[currentQuestionIndex];
       displayQuestion.innerHTML = `${currentQuestion.question}`;
       nextButton.setAttribute("data-type", "easy");
-      document.getElementById("level").innerHTML = "Easy";
+      levelDisplay.innerHTML = "Easy";
    } else if (levelSelect === "medium") {
       currentQuestion = mediumQuestions[currentQuestionIndex];
       displayQuestion.innerHTML = `${currentQuestion.question}`;
       nextButton.setAttribute("data-type", "medium");
-      document.getElementById("level").innerHTML = "Medium";
+      levelDisplay.innerHTML = "Medium";
    } else if (levelSelect === "hard") {
       currentQuestion = hardQuestions[currentQuestionIndex];
       displayQuestion.innerHTML = `${currentQuestion.question}`;
       nextButton.setAttribute("data-type", "hard");
-      document.getElementById("level").innerHTML = "Hard";
+      levelDisplay.innerHTML = "Hard";
    }
 }
 
 
-nextButton.addEventListener("click", function () {
+nextButton.addEventListener("click", () => {
    if (currentQuestionIndex < 9) {
       currentQuestionIndex++;
       let levelSelect = nextButton.getAttribute("data-type");
@@ -278,18 +280,22 @@ const  trueOrFalse = (answer) =>{
   removeAnswerButton();
 }
 
+
 trueButton.addEventListener("click",() => trueOrFalse("true"));
 falseButton.addEventListener("click", () => trueOrFalse("false"));
 
+
 /**Hides true/false 
- * buttons*/
+ * buttons
+ **/
 function removeAnswerButton() {
    trueButtonContainer.classList.add("hide");
    falseButtonContainer.classList.add("hide");
 }
 
 /**Adds true/false buttons back 
- * and hides the images on display*/
+ * and hides the images on display
+ * */
 function addAnswerButton() {
    trueButtonContainer.classList.remove("hide");
    falseButtonContainer.classList.remove("hide");
@@ -316,7 +322,8 @@ function checkAnswer(answer) {
 
 
 /**Gets the player name input and 
- * displays player name*/
+ * displays player name
+ **/
 function playerNameDisplay() {
    let playerInput = playerName.value;
    player.innerHTML = playerInput;
@@ -330,7 +337,8 @@ function updateScore() {
 }
 
 /**Gets current score to 
- * display final score*/
+ * display final score
+ **/
 function finalScore() {
    let finalScoreResult = score.innerHTML;
    finalScoreDisplay.innerHTML = finalScoreResult;
@@ -338,26 +346,26 @@ function finalScore() {
 
 
 
-endButton.addEventListener("click", function () {
+endButton.addEventListener("click", () => {
    levelMessage.innerHTML = "Pick your path through the Ghibli world!";
    finishGame();
 });
 
 
-playAgainButton.addEventListener("click", function () {
+playAgainButton.addEventListener("click", () => {
    finishGame();
    levelMessage.innerHTML = "Choose Your Next Level!";
 });
 
 
-homeButton.addEventListener("click", function () {
+homeButton.addEventListener("click", () => {
    finishGame();
    gamePage.classList.add("hide");
 });
 
 /**Resets the game back to initial state,
  * Clears score, resets current question index, shows welcome page
- * */
+ **/
 function finishGame() {
    thankYouPage.classList.add("hide");
    welcomePage.classList.remove("hide");
@@ -370,7 +378,8 @@ function finishGame() {
 
 
 /** To display Thank You page, hide the game play 
- * and show the final score*/
+ * and show the final score
+ **/
 function endGame() {
    gamePage.classList.add("hide");
    thankYouPage.classList.remove("hide");
