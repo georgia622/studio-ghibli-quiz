@@ -227,8 +227,8 @@ function startButtonAdd() {
 
 
 levelButtons.forEach((button) => {
-   button.addEventListener("click", function () {
-      let levelSelect = this.getAttribute("data-type");
+   button.addEventListener("click", (e) => {
+      let levelSelect = e.target.getAttribute("data-type");
       showQuestion(levelSelect);
       startButtonAdd();
    });
