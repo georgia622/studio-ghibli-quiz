@@ -204,6 +204,7 @@ function startGame() {
    validationError.classList.add("hide");
 }
 
+
 /**Displays the start button 
  * after level selection */
 function startButtonAdd() {
