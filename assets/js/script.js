@@ -27,6 +27,10 @@ const thankYouPage = document.querySelector("#thank-you");
 const score = document.querySelector("#score");
 const finalScoreDisplay = document.querySelector("#final-score");
 
+let currentQuestionIndex = 0;
+let currentQuestion = " ";
+
+
 const easyQuestions = [
    {
       answer: "true",
@@ -186,14 +190,12 @@ const hardQuestions = [
    }
 ];
 
-let currentQuestionIndex = 0;
-let currentQuestion = " ";
-
 
 
 howToButton.addEventListener("click", function () {
    dropDownMenu.classList.toggle("hide");
 });
+
 
 
 startButton.addEventListener("click", function (e) {
@@ -206,6 +208,7 @@ startButton.addEventListener("click", function (e) {
       playerNameDisplay();
    }
 });
+
 
 /**Shows game page and 
  * hides validation error message */
@@ -270,22 +273,33 @@ nextButton.addEventListener("click", function () {
 
 
 
-trueButton.addEventListener("click", checkTrue);
-falseButton.addEventListener("click", checkFalse);
+
 
 /**Checks if true was the correct answer 
- * and hides buttons*/
+ * and hides buttons
 function checkTrue() {
    checkAnswer("true");
    removeAnswerButton(); 
-}
+}*/
 
 /**Checks if false was the correct answer 
- * and hides buttons*/
+ * and hides buttons
 function checkFalse() {
    checkAnswer("false");
    removeAnswerButton(); 
+}*/
+
+
+
+
+
+const  trueOrFalse = (answer) =>{
+  checkAnswer(answer);
+  removeAnswerButton();
 }
+
+trueButton.addEventListener("click",() => trueOrFalse("true"));
+falseButton.addEventListener("click", () => trueOrFalse("false"));
 
 /**Hides true/false 
  * buttons*/
