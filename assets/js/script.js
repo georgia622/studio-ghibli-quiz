@@ -1,4 +1,4 @@
-/**Game button Variables*/
+
 const playAgainButton = document.querySelector("#play-again");
 const endButton = document.querySelector("#end-game");
 const nextButton = document.querySelector("#next");
@@ -13,7 +13,19 @@ const btnEasy = document.querySelector("#btn-easy");
 const btnHard = document.querySelector("#btn-hard");
 const levelButtons = [btnEasy, btnMedium, btnHard];
 const validationError = document.querySelector("#validationError");
-
+const dropDownMenu = document.querySelector("#myDropdown");
+const playerName = document.querySelector("#playername");
+const welcomePage = document.querySelector("#welcome-page");
+const gamePage = document.querySelector("#game-page");
+const trueButtonContainer = document.querySelector("#true-button");
+const falseButtonContainer = document.querySelector("#false-button");
+const rightAnswerImage = document.querySelector("#answerImage");
+const wrongAnswerImage = document.querySelector("#wrong-answer-img");
+const player = document.querySelector("#player");
+const levelMessage = document.querySelector("#level-message");
+const thankYouPage = document.querySelector("#thank-you");
+const score = document.querySelector("#score");
+const finalScoreDisplay = document.querySelector("#final-score");
 
 const easyQuestions = [
    {
@@ -180,14 +192,13 @@ let currentQuestion = " ";
 
 
 howToButton.addEventListener("click", function () {
-   document.getElementById("myDropdown").classList.toggle("hide");
+   dropDownMenu.classList.toggle("hide");
 });
 
 
 startButton.addEventListener("click", function (e) {
    e.preventDefault();
-   const playerName = document.getElementById("playername");
-
+   
    if (!playerName.value) {
       validationError.classList.remove("hide");
    } else {
@@ -199,8 +210,8 @@ startButton.addEventListener("click", function (e) {
 /**Shows game page and 
  * hides validation error message */
 function startGame() {
-   document.getElementById("welcome-page").classList.add("hide");
-   document.getElementById("game-page").classList.remove("hide");
+   welcomePage.classList.add("hide");
+   gamePage.classList.remove("hide");
    validationError.classList.add("hide");
 }
 
@@ -279,17 +290,17 @@ function checkFalse() {
 /**Hides true/false 
  * buttons*/
 function removeAnswerButton() {
-   document.getElementById("true-button").classList.add("hide");
-   document.getElementById("false-button").classList.add("hide");
+   trueButtonContainer.classList.add("hide");
+   falseButtonContainer.classList.add("hide");
 }
 
 /**Adds true/false buttons back 
  * and hides the images on display*/
 function addAnswerButton() {
-   document.getElementById("true-button").classList.remove("hide");
-   document.getElementById("false-button").classList.remove("hide");
-   document.getElementById("answerImage").classList.add("hide"); 
-   document.getElementById("wrong-answer-img").classList.add("hide"); 
+   trueButtonContainer.classList.remove("hide");
+   falseButtonContainer.classList.remove("hide");
+   rightAnswerImage.classList.add("hide"); 
+   wrongAnswerImage.classList.add("hide"); 
 }
 
 
@@ -302,9 +313,9 @@ function checkAnswer(answer) {
    if (currentQuestion.answer === answer) {
       displayQuestion.innerHTML = "That's Correct!";
       updateScore(); 
-      document.getElementById("answerImage").classList.remove("hide");
+      rightAnswerImage.classList.remove("hide");
    } else {
-      document.getElementById("wrong-answer-img").classList.remove("hide");
+      wrongAnswerImage.classList.remove("hide");
       displayQuestion.innerHTML = "The correct answer is" + " " + `${questionAnswer}` + ", " + `${currentQuestion.response}`;
    }
 }
@@ -313,52 +324,52 @@ function checkAnswer(answer) {
 /**Gets the player name input and 
  * displays player name*/
 function playerNameDisplay() {
-   let playerInput = document.getElementById("playername").value;
-   document.getElementById("player").innerHTML = playerInput;
+   let playerInput = playerName.value;
+   player.innerHTML = playerInput;
 }
 
 /**Increments and displays score 
  **/
 function updateScore() {
-   let previousScore = document.getElementById("score").innerHTML;
-   document.getElementById("score").innerHTML = ++previousScore;
+   let previousScore = score.innerHTML;
+   score.innerHTML = ++previousScore;
 }
 
 /**Gets current score to 
  * display final score*/
 function finalScore() {
-   let finalScoreResult = document.getElementById("score").innerHTML;
-   document.getElementById("final-score").innerHTML = finalScoreResult;
+   let finalScoreResult = score.innerHTML;
+   finalScoreDisplay.innerHTML = finalScoreResult;
 }
 
 
 
 endButton.addEventListener("click", function () {
-   document.getElementById("level-message").innerHTML = "Pick your path through the Ghibli world!";
+   levelMessage.innerHTML = "Pick your path through the Ghibli world!";
    finishGame();
 });
 
 
 playAgainButton.addEventListener("click", function () {
    finishGame();
-   document.getElementById("level-message").innerHTML = "Choose Your Next Level!";
+   levelMessage.innerHTML = "Choose Your Next Level!";
 });
 
 
 homeButton.addEventListener("click", function () {
    finishGame();
-   document.getElementById("game-page").classList.add("hide");
+   gamePage.classList.add("hide");
 });
 
 /**Resets the game back to initial state,
  * Clears score, resets current question index, shows welcome page
  * */
 function finishGame() {
-   document.getElementById("thank-you").classList.add("hide");
-   document.getElementById("welcome-page").classList.remove("hide");
+   thankYouPage.classList.add("hide");
+   welcomePage.classList.remove("hide");
    currentQuestionIndex = 0; 
-   document.getElementById("score").innerHTML = "0"; 
-   document.getElementById("playername").innerHTML = " "; 
+   score.innerHTML = "0"; 
+   playerName.innerHTML = " "; 
    startButton.classList.add("hide"); 
    addAnswerButton();
 }
@@ -367,7 +378,7 @@ function finishGame() {
 /** To display Thank You page, hide the game play 
  * and show the final score*/
 function endGame() {
-   document.getElementById("game-page").classList.add("hide");
-   document.getElementById("thank-you").classList.remove("hide");
+   gamePage.classList.add("hide");
+   thankYouPage.classList.remove("hide");
    finalScore(); 
 }
