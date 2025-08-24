@@ -1,18 +1,18 @@
 /**Game button Variables*/
-const playAgainButton = document.getElementById("play-again");
-const endButton = document.getElementById("end-game");
-const nextButton = document.getElementById("next");
-const homeButton = document.getElementById("home");
-const startButton = document.getElementById("start-game");
-const trueButton = document.getElementById("true");
-const falseButton = document.getElementById("false");
-const displayQuestion = document.getElementById("question");
-const howToButton = document.getElementById("btn-instructions");
-const btnMedium = document.getElementById("btn-medium");
-const btnEasy = document.getElementById("btn-easy");
-const btnHard = document.getElementById("btn-hard");
+const playAgainButton = document.querySelector("#play-again");
+const endButton = document.querySelector("#end-game");
+const nextButton = document.querySelector("#next");
+const homeButton = document.querySelector("#home");
+const startButton = document.querySelector("#start-game");
+const trueButton = document.querySelector("#true");
+const falseButton = document.querySelector("#false");
+const displayQuestion = document.querySelector("#question");
+const howToButton = document.querySelector("#btn-instructions");
+const btnMedium = document.querySelector("#btn-medium");
+const btnEasy = document.querySelector("#btn-easy");
+const btnHard = document.querySelector("#btn-hard");
 const levelButtons = [btnEasy, btnMedium, btnHard];
-const validationError = document.getElementById("validationError");
+const validationError = document.querySelector("#validationError");
 
 
 const easyQuestions = [
@@ -222,7 +222,8 @@ levelButtons.forEach((button) => {
 
 
 /** Shows questions from the selected level
- * @param {string} levelSelect - The level difficulty selected "easy", "medium", "hard"
+ * @param {string} levelSelect - The level difficulty 
+ * selected "easy", "medium", "hard"
  */
 function showQuestion(levelSelect) {
 
