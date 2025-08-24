@@ -238,6 +238,7 @@ function showQuestion(levelSelect) {
 }
 
 
+
 const trueOrFalse = (answer) => {
    checkAnswer(answer);
    removeAnswerButton();
