@@ -193,10 +193,22 @@ const hardQuestions = [
 
 
 
-howToButton.addEventListener("click", () => {
-   dropDownMenu.classList.toggle("hide");
-});
 
+/**Shows game page and 
+ * hides validation error message
+ **/
+function startGame() {
+   welcomePage.classList.add("hide");
+   gamePage.classList.remove("hide");
+   validationError.classList.add("hide");
+}
+
+/**Displays the start button 
+ * after level selection 
+ **/
+function startButtonAdd() {
+   startButton.classList.remove("hide");
+}
 
 
 startButton.addEventListener("click", (e) => {
@@ -210,22 +222,21 @@ startButton.addEventListener("click", (e) => {
 });
 
 
-/**Shows game page and 
- * hides validation error message
- **/
-function startGame() {
-   welcomePage.classList.add("hide");
-   gamePage.classList.remove("hide");
-   validationError.classList.add("hide");
-}
+howToButton.addEventListener("click", () => {
+   dropDownMenu.classList.toggle("hide");
+});
 
 
-/**Displays the start button 
- * after level selection 
- **/
-function startButtonAdd() {
-   startButton.classList.remove("hide");
-}
+nextButton.addEventListener("click", () => {
+   if (currentQuestionIndex < 9) {
+      currentQuestionIndex++;
+      let levelSelect = nextButton.getAttribute("data-type");
+      showQuestion(levelSelect);
+      addAnswerButton();
+   } else {
+      endGame();
+   }
+});
 
 
 levelButtons.forEach((button) => {
@@ -235,6 +246,7 @@ levelButtons.forEach((button) => {
       startButtonAdd();
    });
 });
+
 
 
 /** Shows questions from the selected level
@@ -262,28 +274,11 @@ function showQuestion(levelSelect) {
 }
 
 
-nextButton.addEventListener("click", () => {
-   if (currentQuestionIndex < 9) {
-      currentQuestionIndex++;
-      let levelSelect = nextButton.getAttribute("data-type");
-      showQuestion(levelSelect);
-      addAnswerButton();
-   } else {
-      endGame(); 
-   }
-});
 
-
-
-const  trueOrFalse = (answer) =>{
-  checkAnswer(answer);
-  removeAnswerButton();
+const trueOrFalse = (answer) => {
+   checkAnswer(answer);
+   removeAnswerButton();
 }
-
-
-trueButton.addEventListener("click",() => trueOrFalse("true"));
-falseButton.addEventListener("click", () => trueOrFalse("false"));
-
 
 /**Hides true/false 
  * buttons
@@ -299,9 +294,14 @@ function removeAnswerButton() {
 function addAnswerButton() {
    trueButtonContainer.classList.remove("hide");
    falseButtonContainer.classList.remove("hide");
-   rightAnswerImage.classList.add("hide"); 
-   wrongAnswerImage.classList.add("hide"); 
+   rightAnswerImage.classList.add("hide");
+   wrongAnswerImage.classList.add("hide");
 }
+
+
+trueButton.addEventListener("click", () => trueOrFalse("true"));
+falseButton.addEventListener("click", () => trueOrFalse("false"));
+
 
 
 /**Checks answer and updates score if correct, 
@@ -312,13 +312,14 @@ function checkAnswer(answer) {
    let questionAnswer = currentQuestion.answer;
    if (currentQuestion.answer === answer) {
       displayQuestion.innerHTML = "That's Correct!";
-      updateScore(); 
+      updateScore();
       rightAnswerImage.classList.remove("hide");
    } else {
       wrongAnswerImage.classList.remove("hide");
       displayQuestion.innerHTML = "The correct answer is" + " " + `${questionAnswer}` + ", " + `${currentQuestion.response}`;
    }
 }
+
 
 
 /**Gets the player name input and 
@@ -328,6 +329,8 @@ function playerNameDisplay() {
    let playerInput = playerName.value;
    player.innerHTML = playerInput;
 }
+
+
 
 /**Increments and displays score 
  **/
@@ -343,6 +346,7 @@ function finalScore() {
    let finalScoreResult = score.innerHTML;
    finalScoreDisplay.innerHTML = finalScoreResult;
 }
+
 
 
 
@@ -363,16 +367,19 @@ homeButton.addEventListener("click", () => {
    gamePage.classList.add("hide");
 });
 
+
+
+
 /**Resets the game back to initial state,
  * Clears score, resets current question index, shows welcome page
  **/
 function finishGame() {
    thankYouPage.classList.add("hide");
    welcomePage.classList.remove("hide");
-   currentQuestionIndex = 0; 
-   score.innerHTML = "0"; 
-   playerName.innerHTML = " "; 
-   startButton.classList.add("hide"); 
+   currentQuestionIndex = 0;
+   score.innerHTML = "0";
+   playerName.innerHTML = " ";
+   startButton.classList.add("hide");
    addAnswerButton();
 }
 
@@ -383,5 +390,5 @@ function finishGame() {
 function endGame() {
    gamePage.classList.add("hide");
    thankYouPage.classList.remove("hide");
-   finalScore(); 
+   finalScore();
 }
