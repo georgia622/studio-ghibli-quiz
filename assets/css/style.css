@@ -174,4 +174,7 @@ button hover effect tutorial from https://www.30secondsofcode.org/*/
     .large-btn {
       font-size: 3rem;
     }
+    .dropdown-content {
+        width: 350px;
+    }
 }
