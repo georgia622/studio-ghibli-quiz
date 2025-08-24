@@ -273,26 +273,6 @@ nextButton.addEventListener("click", function () {
 
 
 
-
-
-/**Checks if true was the correct answer 
- * and hides buttons
-function checkTrue() {
-   checkAnswer("true");
-   removeAnswerButton(); 
-}*/
-
-/**Checks if false was the correct answer 
- * and hides buttons
-function checkFalse() {
-   checkAnswer("false");
-   removeAnswerButton(); 
-}*/
-
-
-
-
-
 const  trueOrFalse = (answer) =>{
   checkAnswer(answer);
   removeAnswerButton();
