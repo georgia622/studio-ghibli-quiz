@@ -334,7 +334,6 @@ function endGame() {
 
 
 
-
 startButton.addEventListener("click", (e) => {
    e.preventDefault();
    if (!playerName.value) {

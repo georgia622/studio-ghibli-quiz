@@ -80,6 +80,7 @@ button:focus {
     background-color: rgb(255, 206, 133);
 }
 
+
 /*tutorial followed from https://www.geeksforgeeks.org/css/how-to-create-fade-in-effect-on-page-load-using-css/*/
 .fade-in {
     opacity: 0;
