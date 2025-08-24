@@ -14,7 +14,7 @@ const btnHard = document.getElementById("btn-hard");
 const levelButtons = [btnEasy, btnMedium, btnHard];
 const validationError = document.getElementById("validationError");
 
-/**Quiz Questions,answers and responses*/
+
 const easyQuestions = [
    {
       answer: "true",
@@ -179,20 +179,15 @@ let currentQuestion = " ";
 
 
 
-/** Toggles how to play instructions dropdown */
 howToButton.addEventListener("click", function () {
    document.getElementById("myDropdown").classList.toggle("hide");
 });
 
 
-/**Check the user has entered a player name to start the game,
-* tutorial used as guide from
-* https://www.freecodecamp.org/news/form-validation-with-html5-and-javascript/ */
 startButton.addEventListener("click", function (e) {
    e.preventDefault();
    const playerName = document.getElementById("playername");
 
-   //Checks and validates that a user has entered a player name
    if (!playerName.value) {
       validationError.classList.remove("hide");
    } else {
@@ -201,22 +196,21 @@ startButton.addEventListener("click", function (e) {
    }
 });
 
-/**Shows game page and hides validation error message */
+/**Shows game page and 
+ * hides validation error message */
 function startGame() {
-   //Hides welcome page and displays the game page
    document.getElementById("welcome-page").classList.add("hide");
    document.getElementById("game-page").classList.remove("hide");
    validationError.classList.add("hide");
 }
 
-/**Displays the start button after level selection */
+/**Displays the start button 
+ * after level selection */
 function startButtonAdd() {
    startButton.classList.remove("hide");
 }
 
 
-/**Used https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
- *  as a guide */
 levelButtons.forEach((button) => {
    button.addEventListener("click", function () {
       let levelSelect = this.getAttribute("data-type");
@@ -249,9 +243,7 @@ function showQuestion(levelSelect) {
    }
 }
 
-/** Navigates to the next question
- * ends the game if reached the end of the qustions
- */
+
 nextButton.addEventListener("click", function () {
    if (currentQuestionIndex < 9) {
       currentQuestionIndex++;
@@ -259,50 +251,55 @@ nextButton.addEventListener("click", function () {
       showQuestion(levelSelect);
       addAnswerButton();
    } else {
-      endGame(); //Displays thank you page, end of game
+      endGame(); 
    }
 });
 
 
-/**True and false button event listener to check answer*/
+
 trueButton.addEventListener("click", checkTrue);
 falseButton.addEventListener("click", checkFalse);
 
-/**Checks if true was the correct answer and hides buttons*/
+/**Checks if true was the correct answer 
+ * and hides buttons*/
 function checkTrue() {
    checkAnswer("true");
-   removeAnswerButton(); //Removes true/false buttons
+   removeAnswerButton(); 
 }
 
-/**Checks if false was the correct answer and hides buttons*/
+/**Checks if false was the correct answer 
+ * and hides buttons*/
 function checkFalse() {
    checkAnswer("false");
-   removeAnswerButton(); //Removes true/false buttons
+   removeAnswerButton(); 
 }
 
-/**Hides true/false buttons*/
+/**Hides true/false 
+ * buttons*/
 function removeAnswerButton() {
    document.getElementById("true-button").classList.add("hide");
    document.getElementById("false-button").classList.add("hide");
 }
 
-/**Adds true/false buttons back and hides the images on display*/
+/**Adds true/false buttons back 
+ * and hides the images on display*/
 function addAnswerButton() {
    document.getElementById("true-button").classList.remove("hide");
    document.getElementById("false-button").classList.remove("hide");
-   document.getElementById("answerImage").classList.add("hide"); //Hides correct answer image
-   document.getElementById("wrong-answer-img").classList.add("hide"); //Hides wrong answer image
+   document.getElementById("answerImage").classList.add("hide"); 
+   document.getElementById("wrong-answer-img").classList.add("hide"); 
 }
 
 
-/**Checks answer and updates score if correct, displays text with correct answer and why if incorrect,
+/**Checks answer and updates score if correct, 
+ * displays text with correct answer and why if incorrect,
  * @param {string} answer - The users selected answer "true" or "false"
 */
 function checkAnswer(answer) {
    let questionAnswer = currentQuestion.answer;
    if (currentQuestion.answer === answer) {
       displayQuestion.innerHTML = "That's Correct!";
-      updateScore(); //Increments the score
+      updateScore(); 
       document.getElementById("answerImage").classList.remove("hide");
    } else {
       document.getElementById("wrong-answer-img").classList.remove("hide");
@@ -311,19 +308,22 @@ function checkAnswer(answer) {
 }
 
 
-/**Gets the player name input and displays player name*/
+/**Gets the player name input and 
+ * displays player name*/
 function playerNameDisplay() {
    let playerInput = document.getElementById("playername").value;
    document.getElementById("player").innerHTML = playerInput;
 }
 
-/**Increments and displays score */
+/**Increments and displays score 
+ **/
 function updateScore() {
    let previousScore = document.getElementById("score").innerHTML;
    document.getElementById("score").innerHTML = ++previousScore;
 }
 
-/**Gets current score to display final score*/
+/**Gets current score to 
+ * display final score*/
 function finalScore() {
    let finalScoreResult = document.getElementById("score").innerHTML;
    document.getElementById("final-score").innerHTML = finalScoreResult;
@@ -331,40 +331,41 @@ function finalScore() {
 
 
 
-/**End game button restarts game, displays welcome page with original welcome message*/
 endButton.addEventListener("click", function () {
    document.getElementById("level-message").innerHTML = "Pick your path through the Ghibli world!";
    finishGame();
 });
 
-/**Play again button restarts the game, displays welcome page with new selection message*/
+
 playAgainButton.addEventListener("click", function () {
    finishGame();
    document.getElementById("level-message").innerHTML = "Choose Your Next Level!";
 });
 
-/**Home button returns back to welcome page*/
+
 homeButton.addEventListener("click", function () {
    finishGame();
    document.getElementById("game-page").classList.add("hide");
 });
 
 /**Resets the game back to initial state,
- * Clears score, resets current question index, shows welcome page*/
+ * Clears score, resets current question index, shows welcome page
+ * */
 function finishGame() {
    document.getElementById("thank-you").classList.add("hide");
    document.getElementById("welcome-page").classList.remove("hide");
-   currentQuestionIndex = 0; //Resets to first question
-   document.getElementById("score").innerHTML = "0"; //Clears score
-   document.getElementById("playername").innerHTML = " "; //Clears playername
-   startButton.classList.add("hide"); //Start button hiden until level is selected
+   currentQuestionIndex = 0; 
+   document.getElementById("score").innerHTML = "0"; 
+   document.getElementById("playername").innerHTML = " "; 
+   startButton.classList.add("hide"); 
    addAnswerButton();
 }
 
 
-/** To display Thank You page, hide the game play and show the final score*/
+/** To display Thank You page, hide the game play 
+ * and show the final score*/
 function endGame() {
    document.getElementById("game-page").classList.add("hide");
    document.getElementById("thank-you").classList.remove("hide");
-   finalScore(); //Displays the final score
+   finalScore(); 
 }
