@@ -392,7 +392,3 @@ homeButton.addEventListener("click", () => {
    finishGame();
    gamePage.classList.add("hide");
 });
-
-
-
-
