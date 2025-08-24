@@ -203,49 +203,13 @@ function startGame() {
    validationError.classList.add("hide");
 }
 
+
 /**Displays the start button 
  * after level selection 
  **/
 function startButtonAdd() {
    startButton.classList.remove("hide");
 }
-
-
-startButton.addEventListener("click", (e) => {
-   e.preventDefault();
-   if (!playerName.value) {
-      validationError.classList.remove("hide");
-   } else {
-      startGame();
-      playerNameDisplay();
-   }
-});
-
-
-howToButton.addEventListener("click", () => {
-   dropDownMenu.classList.toggle("hide");
-});
-
-
-nextButton.addEventListener("click", () => {
-   if (currentQuestionIndex < 9) {
-      currentQuestionIndex++;
-      let levelSelect = nextButton.getAttribute("data-type");
-      showQuestion(levelSelect);
-      addAnswerButton();
-   } else {
-      endGame();
-   }
-});
-
-
-levelButtons.forEach((button) => {
-   button.addEventListener("click", (e) => {
-      let levelSelect = e.target.getAttribute("data-type");
-      showQuestion(levelSelect);
-      startButtonAdd();
-   });
-});
 
 
 
@@ -274,11 +238,11 @@ function showQuestion(levelSelect) {
 }
 
 
-
 const trueOrFalse = (answer) => {
    checkAnswer(answer);
    removeAnswerButton();
 }
+
 
 /**Hides true/false 
  * buttons
@@ -287,6 +251,7 @@ function removeAnswerButton() {
    trueButtonContainer.classList.add("hide");
    falseButtonContainer.classList.add("hide");
 }
+
 
 /**Adds true/false buttons back 
  * and hides the images on display
@@ -297,11 +262,6 @@ function addAnswerButton() {
    rightAnswerImage.classList.add("hide");
    wrongAnswerImage.classList.add("hide");
 }
-
-
-trueButton.addEventListener("click", () => trueOrFalse("true"));
-falseButton.addEventListener("click", () => trueOrFalse("false"));
-
 
 
 /**Checks answer and updates score if correct, 
@@ -349,27 +309,6 @@ function finalScore() {
 
 
 
-
-endButton.addEventListener("click", () => {
-   levelMessage.innerHTML = "Pick your path through the Ghibli world!";
-   finishGame();
-});
-
-
-playAgainButton.addEventListener("click", () => {
-   finishGame();
-   levelMessage.innerHTML = "Choose Your Next Level!";
-});
-
-
-homeButton.addEventListener("click", () => {
-   finishGame();
-   gamePage.classList.add("hide");
-});
-
-
-
-
 /**Resets the game back to initial state,
  * Clears score, resets current question index, shows welcome page
  **/
@@ -392,3 +331,68 @@ function endGame() {
    thankYouPage.classList.remove("hide");
    finalScore();
 }
+
+
+
+
+startButton.addEventListener("click", (e) => {
+   e.preventDefault();
+   if (!playerName.value) {
+      validationError.classList.remove("hide");
+   } else {
+      startGame();
+      playerNameDisplay();
+   }
+});
+
+
+howToButton.addEventListener("click", () => {
+   dropDownMenu.classList.toggle("hide");
+});
+
+
+nextButton.addEventListener("click", () => {
+   if (currentQuestionIndex < 9) {
+      currentQuestionIndex++;
+      let levelSelect = nextButton.getAttribute("data-type");
+      showQuestion(levelSelect);
+      addAnswerButton();
+   } else {
+      endGame();
+   }
+});
+
+
+levelButtons.forEach((button) => {
+   button.addEventListener("click", (e) => {
+      let levelSelect = e.target.getAttribute("data-type");
+      showQuestion(levelSelect);
+      startButtonAdd();
+   });
+});
+
+
+trueButton.addEventListener("click", () => trueOrFalse("true"));
+falseButton.addEventListener("click", () => trueOrFalse("false"));
+
+
+endButton.addEventListener("click", () => {
+   levelMessage.innerHTML = "Pick your path through the Ghibli world!";
+   finishGame();
+});
+
+
+playAgainButton.addEventListener("click", () => {
+   finishGame();
+   levelMessage.innerHTML = "Choose Your Next Level!";
+});
+
+
+homeButton.addEventListener("click", () => {
+   finishGame();
+   gamePage.classList.add("hide");
+});
+
+
+
+
