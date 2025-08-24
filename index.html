@@ -18,9 +18,9 @@
 
 <body>
     <div class="dropdown">
-        <button type="button" id="btn-instructions" class="btn-styling button-grow">
+        <button type="button" id="btn-instructions" class="btn-styling button-grow large-screen">
             How To play</button>
-        <div id="myDropdown" class="dropdown-content hide">
+        <div id="myDropdown" class="dropdown-content hide large-screen">
             <ul class="list-style">
                 <li> &#10047; Enter your player name.</li>
                 <li> &#10047; Select your level.</li>
@@ -30,32 +30,32 @@
         </div>
     </div>
     <!--Landing Page-->
-    <div id="welcome-page" class="container-styling">
+    <div id="welcome-page" class="container-styling large-screen">
         <form>
             <div>
                 <h1 class="heading-styling">Studio Ghibli: Fact or Fantasy</h1>
                 <label for="playername">
                     Enter Player Name:</label>
-                <input type="text" id="playername" name="playerName" required>
+                <input type="text" id="playername" name="playerName" class="large-screen" required>
                 <p id="validationError" class="hide">Please enter your playername!</p>
             </div>
             <div>
                 <h2 id="level-message" class="heading-styling">Pick your path through the Ghibli world!</h2>
-                <button data-type="easy" type="button" id="btn-easy" class="btn-styling button-grow btn-level">
+                <button data-type="easy" type="button" id="btn-easy" class="btn-styling button-grow btn-level large-screen">
                     Easy</button>
-                <button data-type="medium" type="button" id="btn-medium" class="btn-styling button-grow btn-level">
+                <button data-type="medium" type="button" id="btn-medium" class="btn-styling button-grow btn-level large-screen">
                     Medium</button>
-                <button data-type="hard" type="button" id="btn-hard" class="btn-styling button-grow btn-level btn">
+                <button data-type="hard" type="button" id="btn-hard" class="btn-styling button-grow btn-level btn large-screen">
                     Hard</button>
             </div>
             <div>
-                <button type="submit" id="start-game" class="btn-styling button-grow hide">
+                <button type="submit" id="start-game" class="btn-styling button-grow hide large-screen">
                     Start Game</button>
             </div>
         </form>
     </div>
     <!--Main Game section, questions & player information bar-->
-    <div id="game-page" class="container-styling hide">
+    <div id="game-page" class="container-styling hide large-screen">
         <header class="row heading-styling mobile-font">
             <p> Player: <span id="player"></span></p>
             <p>Level: <span id="level"></span></p>
@@ -71,22 +71,22 @@
                 alt="An image of ponyo">
 
             <span id="true-button">
-                <i id="true" class="fa-solid fa-circle-check icon-styling button-grow">
+                <i id="true" class="fa-solid fa-circle-check icon-styling button-grow large-btn">
                 </i>
             </span>
             <span id="false-button">
-                <i id="false" class="fa-solid fa-circle-xmark icon-styling button-grow">
+                <i id="false" class="fa-solid fa-circle-xmark icon-styling button-grow large-btn">
                 </i>
             </span>
         </div>
         <div class="space-between">
-            <button type="button" id="home" class="btn-styling button-grow">
+            <button type="button" id="home" class="btn-styling button-grow large-screen">
                 Home</button>
-            <button type="button" id="next" class="btn-styling button-grow">
+            <button type="button" id="next" class="btn-styling button-grow large-screen">
                 Next</button>
         </div>
     </div>
-    <div id="thank-you" class="container-styling hide">
+    <div id="thank-you" class="container-styling hide large-screen">
         <div>
             <h1 class="heading-styling">Thanks for playing!</h1>
             <p> Final Score: <span id="final-score"></span>/10 </p>
@@ -96,9 +96,9 @@
             </p>
         </div>
         <div class="space-between">
-            <button type="button" id="end-game" class="btn-styling button-grow">
+            <button type="button" id="end-game" class="btn-styling button-grow large-screen">
                 End Game</button>
-            <button type="button" id="play-again" class="btn-styling button-grow">
+            <button type="button" id="play-again" class="btn-styling button-grow large-screen">
                 Play Again</button>
         </div>
     </div>

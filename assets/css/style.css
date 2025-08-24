@@ -166,3 +166,12 @@ button hover effect tutorial from https://www.30secondsofcode.org/*/
         font-size: 1rem;
     }
 }
+
+@media screen and (min-width: 2560px){
+    .large-screen {
+        font-size: 2rem;
+    }
+    .large-btn {
+      font-size: 3rem;
+    }
+}
