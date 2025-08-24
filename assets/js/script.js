@@ -317,7 +317,6 @@ function finishGame() {
    welcomePage.classList.remove("hide");
    currentQuestionIndex = 0;
    score.innerHTML = "0";
-   playerName.innerHTML = " ";
    startButton.classList.add("hide");
    addAnswerButton();
 }
@@ -378,13 +377,14 @@ falseButton.addEventListener("click", () => trueOrFalse("false"));
 
 endButton.addEventListener("click", () => {
    levelMessage.innerHTML = "Pick your path through the Ghibli world!";
+   playerName.value = " ";
    finishGame();
 });
 
 
 playAgainButton.addEventListener("click", () => {
    finishGame();
-   levelMessage.innerHTML = "Choose Your Next Level!";
+   levelMessage.innerHTML = `Choose Your Next Level ${playerName.value}!`;
 });
 
 
