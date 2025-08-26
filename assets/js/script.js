@@ -398,6 +398,6 @@ btnHard.addEventListener("mouseover", () => {
    popUpHard.classList.remove("hide");
 })
 
-btnEasy.addEventListener("mouseout", () => {
+btnHard.addEventListener("mouseout", () => {
    popUpHard.classList.add("hide");
 })
