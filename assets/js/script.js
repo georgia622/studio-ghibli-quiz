@@ -195,7 +195,57 @@ const hardQuestions = [
    }
 ];
 
-
+const expertQuestions = [{
+      answer: "true",
+      question: "1. Hayao Miyazaki used his own experiences with his mother's illness as inspiration for the character of the bedridden mother in My Neighbor Totoro.",
+      response: "this was a significant inspiration for the character of Yasuko Kusakabe"
+   },
+   {
+      answer: "false",
+      question: "2. The Ohmu creatures in Nausicaä of the Valley of the Wind were inspired by real-world beetles found in Miyazaki's garden.",
+      response: "they were inspired by trilobites and various prehistoric creatures."
+   },
+   {
+      answer: "true",
+      question: "3. The Studio Ghibli name comes from the Italian word for a desert wind, and the studio name is meant to suggest 'a new wind' in the animation industry",
+      response: "the idea being that the studio would 'blow a new wind through the anime industry'"
+   },
+   {
+      answer: "false",
+      question: "4. The background art for Spirited Away was painted using oil paints rather than watercolor or digital techniques.",
+      response: "the backgrounds were primarily done using watercolour and traditional media."
+   },
+   {
+      answer: "true",
+      question: "5. Laputa: Castle in the Sky shares its name with an island in Gulliver's Travels by Jonathan Swift.",
+      response: "Laputa is a flying island described in the 1726 book Gulliver's Travels by Jonathan Swift"
+   },
+   {
+      answer: "false",
+      question: "6. Grave of the Fireflies was intended by Isao Takahata as an anti-American war propaganda film.",
+      response: "Takahata explicitly stated it was not meant as propaganda but as a human tragedy."
+   },
+   {
+      answer: "true",
+      question: "7. The Totoro character design was inspired by a mix of a cat, owl, and tanuki.",
+      response: "this reflects the director Hayao Miyazaki's imagination rather than existing folklore."
+   },
+   {
+      answer: "true",
+      question: "8. Studio Ghibli once refused to release Princess Mononoke in the U.S. unless Miramax agreed not to edit a single frame.",
+      response: "a producer famously sent a katana to Harvey Weinstein with the message no cuts."
+   },
+   {
+      answer: "false",
+      question: "9. Yubaba and Zeniba from Spirited Away are actually voiced by two separate actors in the Japanese version.",
+      response: " In Japanese, both characters are voiced by the same actress (Mari Natsuki)."
+   },
+   {
+      answer: "true",
+      question: "10. The Tale of the Princess Kaguya was the most expensive Japanese animated film ever made at the time of its release.",
+      response: "with a budget of approximately US$49.3 million (5 billion yen)."
+   }
+];
 
 
 /**Shows game page and 
