@@ -52,7 +52,7 @@ body {
     text-align: center;
     background-color: rgb(28, 52, 47, 0.9);
     border-radius: 12px;
-    /*Code tutorial from stackoverflow*/
+    /*Code tutorial from stackoverflow https://stackoverflow.com/questions/2281087/center-a-div-in-css*/
     position: absolute;
     top: 50%;
     left: 50%;
@@ -91,7 +91,7 @@ button:focus {
     right: 50px;
 }
 
-/*tutorial followed from https://www.geeksforgeeks.org/css/how-to-create-fade-in-effect-on-page-load-using-css/*/
+/*Tutorial used https://www.geeksforgeeks.org/css/how-to-create-fade-in-effect-on-page-load-using-css/*/
 .fade-in {
     opacity: 0;
     animation: fadeIn 2s forwards;
@@ -142,7 +142,7 @@ button:focus {
 }
 
 /* To add growing effect to button when hovered 
-button hover effect tutorial from https://www.30secondsofcode.org/*/
+Tutorial used https://www.30secondsofcode.org/*/
 .button-grow {
     transition: all 0.2s ease-in-out;
 }
