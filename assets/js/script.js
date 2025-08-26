@@ -395,6 +395,7 @@ homeButton.addEventListener("click", () => {
    gamePage.classList.add("hide");
 });
 
+/** 
 btnHard.addEventListener("mouseover", () => {
    popUpHard.classList.remove("hide");
 })
@@ -410,3 +411,4 @@ btnMedium.addEventListener("mouseover", () => {
 btnMedium.addEventListener("mouseout", () => {
    popUpMedium.classList.add("hide");
 })
+*/

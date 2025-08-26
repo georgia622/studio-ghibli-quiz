@@ -161,7 +161,19 @@ button hover effect tutorial from https://www.30secondsofcode.org/*/
     width: auto;
     height: 80px;
 }
-
+.pop-up {
+    color: #0e1b18;
+    background-color: #f1f9f6;
+    font-family: "Poppins", sans-serif;
+    border-radius: 12px;
+    width: 350px;
+    text-align: center;
+    padding: 5px;
+    margin: 10px;
+    font-weight: bold;
+   display: flex;
+   justify-content: baseline;
+}
 /*Media Queries for mobile screens*/
 @media screen and (max-width: 860px) {
     .container-styling {
