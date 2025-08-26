@@ -272,7 +272,7 @@ function addAnswerButton() {
 function checkAnswer(answer) {
    let questionAnswer = currentQuestion.answer;
    if (currentQuestion.answer === answer) {
-      displayQuestion.innerHTML = "That's Correct!";
+      displayQuestion.innerHTML = "That's Correct" + " " + `${playerName.value}`+ "!";
       updateScore();
       rightAnswerImage.classList.remove("hide");
    } else {
