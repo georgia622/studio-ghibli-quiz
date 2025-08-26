@@ -80,6 +80,16 @@ button:focus {
     background-color: rgb(255, 206, 133);
 }
 
+.colum {
+    position: absolute;
+    top: 2px;
+    right: 0;
+}
+
+#showDropDown {
+    position: absolute;
+    right: 50px;
+}
 
 /*tutorial followed from https://www.geeksforgeeks.org/css/how-to-create-fade-in-effect-on-page-load-using-css/*/
 .fade-in {
@@ -162,6 +172,7 @@ button hover effect tutorial from https://www.30secondsofcode.org/*/
     height: 80px;
 }
 
+
 /*Media Queries for mobile screens*/
 @media screen and (max-width: 860px) {
     .container-styling {
@@ -170,12 +181,17 @@ button hover effect tutorial from https://www.30secondsofcode.org/*/
         height: auto;
     }
 
-    #btn-instructions {
+    .mobile-btn {
         margin: 10px;
     }
 
     .mobile-font {
         font-size: 1rem;
+    }
+
+    #showDropDown {
+        position: absolute;
+        right: 5px;
     }
 }
 
