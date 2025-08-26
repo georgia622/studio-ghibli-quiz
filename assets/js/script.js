@@ -27,8 +27,8 @@ const thankYouPage = document.querySelector("#thank-you");
 const score = document.querySelector("#score");
 const finalScoreDisplay = document.querySelector("#final-score");
 const levelDisplay = document.querySelector("#level");
-const popUpHard = document.querySelector("#hard-pop-up");
-const popUpMedium = document.querySelector("#medium-pop-up");
+const levelDifficulty = document.querySelector("#level-difficulty");
+const levelDropDown = document.querySelector("#showDropDown");
 
 let currentQuestionIndex = 0;
 let currentQuestion = " ";
@@ -395,6 +395,9 @@ homeButton.addEventListener("click", () => {
    gamePage.classList.add("hide");
 });
 
+levelDifficulty.addEventListener("click", () => {
+   levelDropDown.classList.toggle("hide");
+});
 /** 
 btnHard.addEventListener("mouseover", () => {
    popUpHard.classList.remove("hide");
