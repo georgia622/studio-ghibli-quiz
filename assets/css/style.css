@@ -177,6 +177,7 @@ button hover effect tutorial from https://www.30secondsofcode.org/*/
     position: absolute;
     bottom: 2px;
     right: 0;
+    margin: 20px;
 }
 
 .help-button:hover {
@@ -186,7 +187,7 @@ button hover effect tutorial from https://www.30secondsofcode.org/*/
 .background-color {
     background-color: #5c996e;
     border: solid 3px #1c342f;
-    box-shadow: 3px 3px #1c342f ;
+    box-shadow: 3px 3px #1c342f;
 }
 
 /*Media Queries for mobile screens*/
@@ -209,6 +210,13 @@ button hover effect tutorial from https://www.30secondsofcode.org/*/
         position: absolute;
         right: 5px;
     }
+
+    .mobile-icon {
+        font-size: 27px;
+        position: absolute;
+        bottom: -60px;
+        right: 0;
+    }
 }
 
 @media screen and (min-width: 2560px) {
@@ -222,5 +230,11 @@ button hover effect tutorial from https://www.30secondsofcode.org/*/
 
     .dropdown-content {
         width: 350px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .container-styling {
+        height: auto;
     }
 }
