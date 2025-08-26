@@ -28,6 +28,7 @@ const score = document.querySelector("#score");
 const finalScoreDisplay = document.querySelector("#final-score");
 const levelDisplay = document.querySelector("#level");
 const popUpHard = document.querySelector("#hard-pop-up");
+const popUpMedium = document.querySelector("#medium-pop-up");
 
 let currentQuestionIndex = 0;
 let currentQuestion = " ";
@@ -400,4 +401,12 @@ btnHard.addEventListener("mouseover", () => {
 
 btnHard.addEventListener("mouseout", () => {
    popUpHard.classList.add("hide");
+})
+
+btnMedium.addEventListener("mouseover", () => {
+   popUpMedium.classList.remove("hide");
+})
+
+btnMedium.addEventListener("mouseout", () => {
+   popUpMedium.classList.add("hide");
 })
