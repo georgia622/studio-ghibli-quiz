@@ -29,6 +29,8 @@ const finalScoreDisplay = document.querySelector("#final-score");
 const levelDisplay = document.querySelector("#level");
 const levelDifficulty = document.querySelector("#level-difficulty");
 const levelDropDown = document.querySelector("#showDropDown");
+const helpContent = document.querySelector("#help-content");
+const helpBtn = document.querySelector("#helpBtn");
 
 let currentQuestionIndex = 0;
 let currentQuestion = " ";
@@ -351,6 +353,10 @@ howToButton.addEventListener("click", () => {
    dropDownMenu.classList.toggle("hide");
 });
 
+
+helpBtn.addEventListener("click", () => {
+   helpContent.classList.toggle("hide");
+});
 
 nextButton.addEventListener("click", () => {
    if (currentQuestionIndex < 9) {
