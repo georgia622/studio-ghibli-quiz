@@ -398,20 +398,3 @@ homeButton.addEventListener("click", () => {
 levelDifficulty.addEventListener("click", () => {
    levelDropDown.classList.toggle("hide");
 });
-/** 
-btnHard.addEventListener("mouseover", () => {
-   popUpHard.classList.remove("hide");
-})
-
-btnHard.addEventListener("mouseout", () => {
-   popUpHard.classList.add("hide");
-})
-
-btnMedium.addEventListener("mouseover", () => {
-   popUpMedium.classList.remove("hide");
-})
-
-btnMedium.addEventListener("mouseout", () => {
-   popUpMedium.classList.add("hide");
-})
-*/
