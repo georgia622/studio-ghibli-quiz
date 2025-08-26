@@ -394,5 +394,10 @@ homeButton.addEventListener("click", () => {
    gamePage.classList.add("hide");
 });
 
+btnHard.addEventListener("mouseover", () => {
+   popUpHard.classList.remove("hide");
+})
 
-
+btnEasy.addEventListener("mouseout", () => {
+   popUpHard.classList.add("hide");
+})
