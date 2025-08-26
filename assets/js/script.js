@@ -27,6 +27,7 @@ const thankYouPage = document.querySelector("#thank-you");
 const score = document.querySelector("#score");
 const finalScoreDisplay = document.querySelector("#final-score");
 const levelDisplay = document.querySelector("#level");
+const popUpHard = document.querySelector("#hard-pop-up");
 
 let currentQuestionIndex = 0;
 let currentQuestion = " ";
@@ -392,3 +393,6 @@ homeButton.addEventListener("click", () => {
    finishGame();
    gamePage.classList.add("hide");
 });
+
+
+
