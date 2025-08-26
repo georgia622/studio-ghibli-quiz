@@ -11,7 +11,8 @@ const howToButton = document.querySelector("#btn-instructions");
 const btnMedium = document.querySelector("#btn-medium");
 const btnEasy = document.querySelector("#btn-easy");
 const btnHard = document.querySelector("#btn-hard");
-const levelButtons = [btnEasy, btnMedium, btnHard];
+const btnExpert = document.querySelector("#btnExpert");
+const levelButtons = [btnEasy, btnMedium, btnHard, btnExpert];
 const validationError = document.querySelector("#validationError");
 const dropDownMenu = document.querySelector("#myDropdown");
 const playerName = document.querySelector("#playername");
@@ -288,6 +289,11 @@ function showQuestion(levelSelect) {
       displayQuestion.innerHTML = `${currentQuestion.question}`;
       nextButton.setAttribute("data-type", "hard");
       levelDisplay.innerHTML = "Hard";
+   } else if (levelSelect === "expert") {
+      currentQuestion = expertQuestions[currentQuestionIndex];
+      displayQuestion.innerHTML = `${currentQuestion.question}`;
+      nextButton.setAttribute("data-type", "expert");
+      levelDisplay.innerHTML = "Expert";
    }
 }
 
@@ -419,6 +425,13 @@ nextButton.addEventListener("click", () => {
    }
 });
 
+btnExpert.addEventListener("click", () => {
+    thankYouPage.classList.add("hide");
+    gamePage.classList.remove("hide");
+    currentQuestionIndex = 0;
+    score.innerHTML = "0";
+     addAnswerButton();
+});
 
 levelButtons.forEach((button) => {
    button.addEventListener("click", (e) => {
