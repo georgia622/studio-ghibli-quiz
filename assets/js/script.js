@@ -297,7 +297,14 @@ function showQuestion(levelSelect) {
    }
 }
 
-
+function expertBtnShow (){
+   levelSelect = nextButton.getAttribute("data-type");
+   if(levelSelect === "hard"){
+      btnExpert.classList.remove("hide");
+   } else {
+      btnExpert.classList.add("hide");
+   }
+}
 
 const trueOrFalse = (answer) => {
    checkAnswer(answer);
@@ -390,6 +397,7 @@ function endGame() {
    gamePage.classList.add("hide");
    thankYouPage.classList.remove("hide");
    finalScore();
+   expertBtnShow();
 }
 
 
@@ -424,6 +432,7 @@ nextButton.addEventListener("click", () => {
       endGame();
    }
 });
+
 
 btnExpert.addEventListener("click", () => {
     thankYouPage.classList.add("hide");
