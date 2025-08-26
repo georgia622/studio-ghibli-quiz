@@ -183,14 +183,10 @@ button hover effect tutorial from https://www.30secondsofcode.org/*/
     color: rgb(255, 206, 133);
 }
 
-.help-content {
+.background-color {
     background-color: #5c996e;
-     position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
+    border: solid 3px #1c342f;
+    box-shadow: 3px 3px #1c342f ;
 }
 
 /*Media Queries for mobile screens*/
