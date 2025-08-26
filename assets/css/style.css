@@ -80,7 +80,7 @@ button:focus {
     background-color: rgb(255, 206, 133);
 }
 
-.colum {
+.move-right {
     position: absolute;
     top: 2px;
     right: 0;
@@ -172,6 +172,15 @@ button hover effect tutorial from https://www.30secondsofcode.org/*/
     height: 80px;
 }
 
+.help-button {
+    position: absolute;
+    bottom: 2px;
+    right: 0;
+}
+
+.help-button:hover {
+    color: rgb(255, 206, 133);
+}
 
 /*Media Queries for mobile screens*/
 @media screen and (max-width: 860px) {
