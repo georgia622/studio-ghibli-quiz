@@ -249,7 +249,8 @@ const expertQuestions = [{
 ];
 
 
-/**Shows game page and 
+/**
+ * Shows game page and 
  * hides validation error message
  **/
 function startGame() {
@@ -259,7 +260,8 @@ function startGame() {
 }
 
 
-/**Displays the start button 
+/**
+ * Displays the start button 
  * after level selection 
  **/
 function startButtonAdd() {
@@ -268,7 +270,8 @@ function startButtonAdd() {
 
 
 
-/** Shows questions from the selected level
+/** 
+ * Shows questions from the selected level
  * @param {string} levelSelect - The level difficulty 
  * selected "easy", "medium", "hard"
  */
@@ -297,6 +300,9 @@ function showQuestion(levelSelect) {
    }
 }
 
+/**
+ * Displays expert button if hard level has been selected
+ */
 function expertBtnShow (){
    levelSelect = nextButton.getAttribute("data-type");
    if(levelSelect === "hard"){
@@ -306,13 +312,15 @@ function expertBtnShow (){
    }
 }
 
+
 const trueOrFalse = (answer) => {
    checkAnswer(answer);
    removeAnswerButton();
 }
 
 
-/**Hides true/false 
+/**
+ * Hides true/false 
  * buttons
  **/
 function removeAnswerButton() {
@@ -321,7 +329,8 @@ function removeAnswerButton() {
 }
 
 
-/**Adds true/false buttons back 
+/**
+ * Adds true/false buttons back 
  * and hides the images on display
  * */
 function addAnswerButton() {
@@ -332,7 +341,8 @@ function addAnswerButton() {
 }
 
 
-/**Checks answer and updates score if correct, 
+/**
+ * Checks answer and updates score if correct, 
  * displays text with correct answer and why if incorrect,
  * @param {string} answer - The users selected answer "true" or "false"
 */
@@ -350,7 +360,8 @@ function checkAnswer(answer) {
 
 
 
-/**Gets the player name input and 
+/**
+ * Gets the player name input and 
  * displays player name
  **/
 function playerNameDisplay() {
@@ -360,14 +371,16 @@ function playerNameDisplay() {
 
 
 
-/**Increments and displays score 
+/**
+ * Increments and displays score 
  **/
 function updateScore() {
    let previousScore = score.innerHTML;
    score.innerHTML = ++previousScore;
 }
 
-/**Gets current score to 
+/**
+ * Gets current score to 
  * display final score
  **/
 function finalScore() {
@@ -377,7 +390,8 @@ function finalScore() {
 
 
 
-/**Resets the game back to initial state,
+/**
+ * Resets the game back to initial state,
  * Clears score, resets current question index, shows welcome page
  **/
 function finishGame() {
@@ -390,7 +404,8 @@ function finishGame() {
 }
 
 
-/** To display Thank You page, hide the game play 
+/** 
+ * To display Thank You page, hide the game play 
  * and show the final score
  **/
 function endGame() {
@@ -421,6 +436,7 @@ howToButton.addEventListener("click", () => {
 helpBtn.addEventListener("click", () => {
    helpContent.classList.toggle("hide");
 });
+
 
 nextButton.addEventListener("click", () => {
    if (currentQuestionIndex < 9) {
@@ -457,7 +473,7 @@ falseButton.addEventListener("click", () => trueOrFalse("false"));
 
 endButton.addEventListener("click", () => {
    levelMessage.innerHTML = "Pick your path through the Ghibli world!";
-   playerName.value = " ";
+   playerName.value = "";
    finishGame();
 });
 
