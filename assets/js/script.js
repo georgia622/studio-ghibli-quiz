@@ -56,7 +56,7 @@ const easyQuestions = [
    {
       answer: "true",
       question: "4. Spirited Away features a bathhouse for spirits.",
-      response: "yes, Spirited Away features a bathhouse called Aburaya (also known as the Bathhouse) that serves as a place for spirits to relax and rejuvenate"
+      response: "yes, Spirited Away features a bathhouse called Aburaya (also known as the Bathhouse) that serves as a place for spirits to relax and rejuvenate."
    },
    {
       answer: "true",
@@ -76,7 +76,7 @@ const easyQuestions = [
    {
       answer: "true",
       question: "8. Soot sprites appear in both Spirited Away and My Neighbor Totoro.",
-      response: "Soot sprites, also known as Susuwatari or Makkurokurosuke, make appearances in both Studio Ghibli films"
+      response: "Soot sprites, also known as Susuwatari or Makkurokurosuke, make appearances in both Studio Ghibli films."
    },
    {
       answer: "false",
@@ -147,7 +147,7 @@ const hardQuestions = [
    {
       answer: "true",
       question: "1. The original Japanese title of Spirited Away is Sen to Chihiro no Kamikakushi.",
-      response: "this translates to Sen and Chihiro's Spiriting Away or Sen and Chihiro's Disappearance"
+      response: "this translates to Sen and Chihiro's Spiriting Away or Sen and Chihiro's Disappearance."
    },
    {
       answer: "true",
@@ -199,7 +199,7 @@ const hardQuestions = [
 const expertQuestions = [{
    answer: "true",
    question: "1. Hayao Miyazaki used his own experiences with his mother's illness as inspiration for the character of the bedridden mother in My Neighbor Totoro.",
-   response: "this was a significant inspiration for the character of Yasuko Kusakabe"
+   response: "this was a significant inspiration for the character of Yasuko Kusakabe."
 },
 {
    answer: "false",
@@ -208,8 +208,8 @@ const expertQuestions = [{
 },
 {
    answer: "true",
-   question: "3. The Studio Ghibli name comes from the Italian word for a desert wind, and the studio name is meant to suggest 'a new wind' in the animation industry",
-   response: "the idea being that the studio would 'blow a new wind through the anime industry'"
+   question: "3. The Studio Ghibli name comes from the Italian word for a desert wind, and the studio name is meant to suggest 'a new wind' in the animation industry.",
+   response: "the idea being that the studio would 'blow a new wind through the anime industry'."
 },
 {
    answer: "false",
@@ -219,7 +219,7 @@ const expertQuestions = [{
 {
    answer: "true",
    question: "5. Laputa: Castle in the Sky shares its name with an island in Gulliver's Travels by Jonathan Swift.",
-   response: "Laputa is a flying island described in the 1726 book Gulliver's Travels by Jonathan Swift"
+   response: "Laputa is a flying island described in the 1726 book Gulliver's Travels by Jonathan Swift."
 },
 {
    answer: "false",
