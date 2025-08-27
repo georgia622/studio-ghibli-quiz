@@ -320,6 +320,10 @@ function questionTimer(levelSelect) {
       timeLeft--;
       timer.innerText = `${timeLeft}`;
 
+      if (timeLeft <= 3) {
+         timer.classList.add("colour-red");
+      }
+
       if (timeLeft <= 0) {
          timer.innerText = "0";
          checkAnswer("timeOut");
@@ -470,6 +474,7 @@ nextButton.addEventListener("click", () => {
       endGame();
    } else {
       let levelSelect = nextButton.getAttribute("data-type");
+      timer.classList.remove("colour-red");
       showQuestion(levelSelect);
       addAnswerButton();
    }

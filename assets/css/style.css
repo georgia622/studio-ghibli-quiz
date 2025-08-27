@@ -138,6 +138,13 @@ button:focus {
     padding: 30px;
 }
 
+
+/*Timer colour*/
+.colour-red {
+    color: #ed5d5d;
+}
+
+
 /*To hide section when no longer needed on screen*/
 .hide {
     display: none;
