@@ -250,7 +250,7 @@ const expertQuestions = [{
 
 
 /**
- * Shows game page and 
+ * Shows game page and
  * hides validation error message
  **/
 function startGame() {
@@ -261,8 +261,8 @@ function startGame() {
 
 
 /**
- * Displays the start button 
- * after level selection 
+ * Displays the start button
+ * after level selection
  **/
 function startButtonAdd() {
    startButton.classList.remove("hide");
@@ -270,9 +270,9 @@ function startButtonAdd() {
 
 
 
-/** 
+/**
  * Shows questions from the selected level
- * @param {string} levelSelect - The level difficulty 
+ * @param {string} levelSelect - The level difficulty
  * selected "easy", "medium", "hard"
  */
 function showQuestion(levelSelect) {
@@ -343,7 +343,7 @@ function questionTimer(levelSelect) {
  * Displays expert button if hard level has been selected
  */
 function expertBtnShow() {
-   levelSelect = nextButton.getAttribute("data-type");
+   let levelSelect = nextButton.getAttribute("data-type");
    if (levelSelect === "hard") {
       btnExpert.classList.remove("hide");
    } else {
@@ -355,11 +355,11 @@ function expertBtnShow() {
 const trueOrFalse = (answer) => {
    checkAnswer(answer);
    removeAnswerButton();
-}
+};
 
 
 /**
- * Hides true/false 
+ * Hides true/false
  * buttons
  **/
 function removeAnswerButton() {
@@ -369,7 +369,7 @@ function removeAnswerButton() {
 
 
 /**
- * Adds true/false buttons back 
+ * Adds true/false buttons back
  * and hides the images on display
  * */
 function addAnswerButton() {
@@ -381,7 +381,7 @@ function addAnswerButton() {
 
 
 /**
- * Checks answer and updates score if correct, 
+ * Checks answer and updates score if correct,
  * displays text with correct answer and why if incorrect,
  * @param {string} answer - The users selected answer "true" or "false"
 */
@@ -406,7 +406,7 @@ function checkAnswer(answer) {
 
 
 /**
- * Increments and displays score 
+ * Increments and displays score
  **/
 function updateScore() {
    let previousScore = score.innerHTML;
@@ -414,7 +414,7 @@ function updateScore() {
 }
 
 /**
- * Gets current score to 
+ * Gets current score to
  * display final score
  **/
 function finalScore() {
@@ -438,8 +438,8 @@ function finishGame() {
 }
 
 
-/** 
- * To display Thank You page, hide the game play 
+/**
+ * To display Thank You page, hide the game play
  * and show the final score
  **/
 function endGame() {
