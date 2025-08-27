@@ -302,11 +302,22 @@ function showQuestion(levelSelect) {
 } */
 
 const levelQuestions = {
-   easy: {questions: easyQuestions, display: Easy},
-   medium: {questions: mediumQuestions, display: Medium},
-   hard: {questions: hardQuestions, display: Hard}
+   easy: { questions: easyQuestions, display: "Easy" },
+   medium: { questions: mediumQuestions, display: "Medium" },
+   hard: { questions: hardQuestions, display: "Hard" },
+   expert: { questions: expertQuestions, display: "Expert" }
 };
 
+
+function showQuestion(levelSelect) {
+   const level = levelQuestions[levelSelect];
+   currentQuestion = level.questions[currentQuestionIndex];
+   displayQuestion.innerHTML = currentQuestion.question;
+   nextButton.setAttribute("data-type", levelSelect);
+   levelDisplay.innerHTML = level.display;
+
+   questionTimer(levelSelect);
+}
 
 
 
