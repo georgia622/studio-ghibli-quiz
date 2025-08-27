@@ -296,9 +296,6 @@ function showQuestion(levelSelect) {
 
 
 
-
-
-
 /**
  * To start the countdown for each level depending on user selection
  * @param {string} levelSelect - The level difficulty selected
@@ -469,13 +466,14 @@ helpBtn.addEventListener("click", () => {
 
 
 nextButton.addEventListener("click", () => {
-   if (currentQuestionIndex < 9) {
-      currentQuestionIndex++;
+   currentQuestionIndex++;
+
+   if (currentQuestionIndex >= 10) {
+      endGame();
+   } else {
       let levelSelect = nextButton.getAttribute("data-type");
       showQuestion(levelSelect);
       addAnswerButton();
-   } else {
-      endGame();
    }
 });
 
