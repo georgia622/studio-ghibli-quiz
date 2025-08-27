@@ -353,6 +353,9 @@ function checkAnswer(answer) {
       displayQuestion.innerHTML = "That's Correct" + " " + `${playerName.value}` + "!";
       updateScore();
       rightAnswerImage.classList.remove("hide");
+   } else if (answer === "timeOut") {
+      wrongAnswerImage.classList.remove("hide");
+      displayQuestion.innerHTML = "Times up! The answer is" + " " + `${questionAnswer}` + ", " + `${currentQuestion.response}`;
    } else {
       wrongAnswerImage.classList.remove("hide");
       displayQuestion.innerHTML = "The correct answer is" + " " + `${questionAnswer}` + ", " + `${currentQuestion.response}`;
@@ -501,7 +504,7 @@ let timerInterval;
 
 function questionTimer(levelSelect) {
 
-   if(timerInterval){
+   if (timerInterval) {
       clearInterval(timerInterval);
    }
 
@@ -518,14 +521,16 @@ function questionTimer(levelSelect) {
 
    timer.innerText = `${timeLeft}`;
 
-   timerInterval = setInterval (() => {
+   timerInterval = setInterval(() => {
       timeLeft--;
       timer.innerText = `${timeLeft}`;
-    
-      if(timeLeft <= 0){
+
+      if (timeLeft <= 0) {
          timer.innerText = "0";
+         checkAnswer("timeOut");
+         removeAnswerButton();
       }
 
    }, 1000);
- 
+
 }
