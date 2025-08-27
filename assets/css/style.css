@@ -60,6 +60,7 @@ body {
     transform: translate(-50%, -50%);
 }
 
+
 .btn-styling {
     color: #0e1b18;
     background-color: #f1f9f6;
@@ -79,6 +80,7 @@ button:hover {
 button:focus {
     background-color: rgb(255, 206, 133);
 }
+
 
 .move-right {
     position: absolute;

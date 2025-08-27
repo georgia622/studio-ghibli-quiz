@@ -451,11 +451,11 @@ nextButton.addEventListener("click", () => {
 
 
 btnExpert.addEventListener("click", () => {
-    thankYouPage.classList.add("hide");
-    gamePage.classList.remove("hide");
-    currentQuestionIndex = 0;
-    score.innerHTML = "0";
-     addAnswerButton();
+      thankYouPage.classList.add("hide");
+      gamePage.classList.remove("hide");
+      currentQuestionIndex = 0;
+      score.innerHTML = "0";
+      addAnswerButton();
 });
 
 levelButtons.forEach((button) => {
@@ -492,3 +492,6 @@ homeButton.addEventListener("click", () => {
 levelDifficulty.addEventListener("click", () => {
    levelDropDown.classList.toggle("hide");
 });
+
+
+const timer  = document.querySelector("#timer");
