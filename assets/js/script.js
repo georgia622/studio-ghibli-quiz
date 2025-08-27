@@ -298,7 +298,7 @@ function showQuestion(levelSelect) {
       nextButton.setAttribute("data-type", "expert");
       levelDisplay.innerHTML = "Expert";
    }
-   questionTimer();
+   questionTimer(levelSelect);
 }
 
 /**
@@ -522,7 +522,7 @@ function questionTimer(levelSelect) {
       timeLeft--;
       timer.innerText = `${timeLeft}`;
     
-      if(timeLeft >= 0){
+      if(timeLeft <= 0){
          timer.innerText = "0";
       }
 
