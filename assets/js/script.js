@@ -298,6 +298,7 @@ function showQuestion(levelSelect) {
       nextButton.setAttribute("data-type", "expert");
       levelDisplay.innerHTML = "Expert";
    }
+   questionTimer();
 }
 
 /**
@@ -423,7 +424,7 @@ startButton.addEventListener("click", (e) => {
       validationError.classList.remove("hide");
    } else {
       startGame();
-      playerNameDisplay();
+      //playerNameDisplay();
    }
 });
 
@@ -495,8 +496,15 @@ levelDifficulty.addEventListener("click", () => {
 
 
 const timer = document.querySelector("#timer");
+let timerInterval;
+
 
 function questionTimer(levelSelect) {
+
+   if(timerInterval){
+      clearInterval(timerInterval);
+   }
+
    let timeLeft;
    if (levelSelect === "easy") {
       timeLeft = 20;
@@ -509,5 +517,15 @@ function questionTimer(levelSelect) {
    }
 
    timer.innerText = `${timeLeft}`;
+
+   timerInterval = setInterval (() => {
+      timeLeft--;
+      timer.innerText = `${timeLeft}`;
+    
+      if(timeLeft >= 0){
+         timer.innerText = "0";
+      }
+
+   }, 1000);
  
 }
