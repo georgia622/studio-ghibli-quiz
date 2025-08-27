@@ -22,7 +22,6 @@ const trueButtonContainer = document.querySelector("#true-button");
 const falseButtonContainer = document.querySelector("#false-button");
 const rightAnswerImage = document.querySelector("#answerImage");
 const wrongAnswerImage = document.querySelector("#wrong-answer-img");
-const player = document.querySelector("#player");
 const levelMessage = document.querySelector("#level-message");
 const thankYouPage = document.querySelector("#thank-you");
 const score = document.querySelector("#score");
@@ -32,10 +31,11 @@ const levelDifficulty = document.querySelector("#level-difficulty");
 const levelDropDown = document.querySelector("#showDropDown");
 const helpContent = document.querySelector("#help-content");
 const helpBtn = document.querySelector("#helpBtn");
+const timer = document.querySelector("#timer");
 
 let currentQuestionIndex = 0;
 let currentQuestion = " ";
-
+let timerInterval;
 
 const easyQuestions = [
    {
@@ -301,6 +301,44 @@ function showQuestion(levelSelect) {
    questionTimer(levelSelect);
 }
 
+
+/**
+ * To start the countdown for each level depending on user selection
+ * @param {string} levelSelect - The level difficulty selected
+ */
+function questionTimer(levelSelect) {
+   if (timerInterval) {
+      clearInterval(timerInterval);
+   }
+
+   let timeLeft;
+   if (levelSelect === "easy") {
+      timeLeft = 20;
+   } else if (levelSelect === "medium") {
+      timeLeft = 15;
+   } else if (levelSelect === "hard") {
+      timeLeft = 10;
+   } else if (levelSelect === "expert") {
+      timeLeft = 7;
+   }
+
+   timer.innerText = `${timeLeft}`;
+
+   timerInterval = setInterval(() => {
+      timeLeft--;
+      timer.innerText = `${timeLeft}`;
+
+      if (timeLeft <= 0) {
+         timer.innerText = "0";
+         checkAnswer("timeOut");
+         removeAnswerButton();
+         clearInterval(timerInterval);
+      }
+
+   }, 1000);
+}
+
+
 /**
  * Displays expert button if hard level has been selected
  */
@@ -349,6 +387,10 @@ function addAnswerButton() {
 */
 function checkAnswer(answer) {
    let questionAnswer = currentQuestion.answer;
+
+   if (timerInterval) {
+      clearInterval(timerInterval);
+   }
    if (currentQuestion.answer === answer) {
       displayQuestion.innerHTML = "That's Correct" + " " + `${playerName.value}` + "!";
       updateScore();
@@ -361,18 +403,6 @@ function checkAnswer(answer) {
       displayQuestion.innerHTML = "The correct answer is" + " " + `${questionAnswer}` + ", " + `${currentQuestion.response}`;
    }
 }
-
-
-
-/**
- * Gets the player name input and 
- * displays player name
- *
-function playerNameDisplay() {
-   let playerInput = playerName.value;
-   player.innerHTML = playerInput;
-}*/
-
 
 
 /**
@@ -427,7 +457,6 @@ startButton.addEventListener("click", (e) => {
       validationError.classList.remove("hide");
    } else {
       startGame();
-      //playerNameDisplay();
    }
 });
 
@@ -496,41 +525,3 @@ homeButton.addEventListener("click", () => {
 levelDifficulty.addEventListener("click", () => {
    levelDropDown.classList.toggle("hide");
 });
-
-
-const timer = document.querySelector("#timer");
-let timerInterval;
-
-
-function questionTimer(levelSelect) {
-
-   if (timerInterval) {
-      clearInterval(timerInterval);
-   }
-
-   let timeLeft;
-   if (levelSelect === "easy") {
-      timeLeft = 20;
-   } else if (levelSelect === "medium") {
-      timeLeft = 15;
-   } else if (levelSelect === "hard") {
-      timeLeft = 10;
-   } else if (levelSelect === "expert") {
-      timeLeft = 7;
-   }
-
-   timer.innerText = `${timeLeft}`;
-
-   timerInterval = setInterval(() => {
-      timeLeft--;
-      timer.innerText = `${timeLeft}`;
-
-      if (timeLeft <= 0) {
-         timer.innerText = "0";
-         checkAnswer("timeOut");
-         removeAnswerButton();
-      }
-
-   }, 1000);
-
-}
