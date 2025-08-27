@@ -274,7 +274,7 @@ function startButtonAdd() {
  * Shows questions from the selected level
  * @param {string} levelSelect - The level difficulty
  * selected "easy", "medium", "hard"
- */
+ 
 function showQuestion(levelSelect) {
 
    if (levelSelect === "easy") {
@@ -299,7 +299,19 @@ function showQuestion(levelSelect) {
       levelDisplay.innerHTML = "Expert";
    }
    questionTimer(levelSelect);
-}
+} */
+
+const levelQuestions = {
+   easy: {questions: easyQuestions, display: Easy},
+   medium: {questions: mediumQuestions, display: Medium},
+   hard: {questions: hardQuestions, display: Hard}
+};
+
+
+
+
+
+
 
 
 /**
