@@ -285,6 +285,7 @@ const levelQuestions = {
  */
 function showQuestion(levelSelect) {
    const level = levelQuestions[levelSelect];
+
    currentQuestion = level.questions[currentQuestionIndex];
    displayQuestion.innerHTML = currentQuestion.question;
    nextButton.setAttribute("data-type", levelSelect);
@@ -292,7 +293,6 @@ function showQuestion(levelSelect) {
 
    questionTimer(levelSelect);
 }
-
 
 
 
@@ -304,8 +304,16 @@ function questionTimer(levelSelect) {
    if (timerInterval) {
       clearInterval(timerInterval);
    }
+   
 
-   let timeLeft;
+   const timeSelect = {
+      easy: 20,
+      medium: 15,
+      hard: 10,
+      expert: 7
+   };
+   let timeLeft = timeSelect[levelSelect]
+   /*
    if (levelSelect === "easy") {
       timeLeft = 20;
    } else if (levelSelect === "medium") {
@@ -314,7 +322,7 @@ function questionTimer(levelSelect) {
       timeLeft = 10;
    } else if (levelSelect === "expert") {
       timeLeft = 7;
-   }
+   } */
 
    timer.innerText = `${timeLeft}`;
 
