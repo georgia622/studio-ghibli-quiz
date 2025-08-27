@@ -304,7 +304,6 @@ function questionTimer(levelSelect) {
    if (timerInterval) {
       clearInterval(timerInterval);
    }
-   
 
    const timeSelect = {
       easy: 20,
@@ -312,17 +311,8 @@ function questionTimer(levelSelect) {
       hard: 10,
       expert: 7
    };
+
    let timeLeft = timeSelect[levelSelect]
-   /*
-   if (levelSelect === "easy") {
-      timeLeft = 20;
-   } else if (levelSelect === "medium") {
-      timeLeft = 15;
-   } else if (levelSelect === "hard") {
-      timeLeft = 10;
-   } else if (levelSelect === "expert") {
-      timeLeft = 7;
-   } */
 
    timer.innerText = `${timeLeft}`;
 
