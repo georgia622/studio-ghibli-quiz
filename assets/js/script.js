@@ -270,37 +270,6 @@ function startButtonAdd() {
 
 
 
-/**
- * Shows questions from the selected level
- * @param {string} levelSelect - The level difficulty
- * selected "easy", "medium", "hard"
- 
-function showQuestion(levelSelect) {
-
-   if (levelSelect === "easy") {
-      currentQuestion = easyQuestions[currentQuestionIndex];
-      displayQuestion.innerHTML = `${currentQuestion.question}`;
-      nextButton.setAttribute("data-type", "easy");
-      levelDisplay.innerHTML = "Easy";
-   } else if (levelSelect === "medium") {
-      currentQuestion = mediumQuestions[currentQuestionIndex];
-      displayQuestion.innerHTML = `${currentQuestion.question}`;
-      nextButton.setAttribute("data-type", "medium");
-      levelDisplay.innerHTML = "Medium";
-   } else if (levelSelect === "hard") {
-      currentQuestion = hardQuestions[currentQuestionIndex];
-      displayQuestion.innerHTML = `${currentQuestion.question}`;
-      nextButton.setAttribute("data-type", "hard");
-      levelDisplay.innerHTML = "Hard";
-   } else if (levelSelect === "expert") {
-      currentQuestion = expertQuestions[currentQuestionIndex];
-      displayQuestion.innerHTML = `${currentQuestion.question}`;
-      nextButton.setAttribute("data-type", "expert");
-      levelDisplay.innerHTML = "Expert";
-   }
-   questionTimer(levelSelect);
-} */
-
 const levelQuestions = {
    easy: { questions: easyQuestions, display: "Easy" },
    medium: { questions: mediumQuestions, display: "Medium" },
@@ -309,6 +278,11 @@ const levelQuestions = {
 };
 
 
+/**
+ * Shows questions from the selected level
+ * @param {string} levelSelect - The level difficulty
+ * selected "easy", "medium", "hard"
+ */
 function showQuestion(levelSelect) {
    const level = levelQuestions[levelSelect];
    currentQuestion = level.questions[currentQuestionIndex];
