@@ -380,27 +380,7 @@ function addAnswerButton() {
  * Checks answer and updates score if correct,
  * displays text with correct answer and why if incorrect,
  * @param {string} answer - The users selected answer "true" or "false"
-
-function checkAnswer(answer) {
-   let questionAnswer = currentQuestion.answer;
-
-   if (timerInterval) {
-      clearInterval(timerInterval);
-   }
-   if (currentQuestion.answer === answer) {
-      displayQuestion.innerHTML = "That's Correct" + " " + `${playerName.value}` + "!";
-      updateScore();
-      rightAnswerImage.classList.remove("hide");
-   } else if (answer === "timeOut") {
-      wrongAnswerImage.classList.remove("hide");
-      displayQuestion.innerHTML = "Times up! The answer is" + " " + `${questionAnswer}` + ", " + `${currentQuestion.response}`;
-   } else {
-      wrongAnswerImage.classList.remove("hide");
-      displayQuestion.innerHTML = "The correct answer is" + " " + `${questionAnswer}` + ", " + `${currentQuestion.response}`;
-   }
-}
-   */
-
+*/
 function checkAnswer(answer) {
    if (timerInterval) {
       clearInterval(timerInterval);
