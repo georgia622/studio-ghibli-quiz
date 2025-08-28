@@ -271,10 +271,10 @@ function startButtonAdd() {
 
 
 const levelQuestions = {
-   easy: { questions: easyQuestions, display: "Easy" },
-   medium: { questions: mediumQuestions, display: "Medium" },
+   easy: { questions: easyQuestions, display: "Easy"},
+   medium: { questions: mediumQuestions, display: "Medium"},
    hard: { questions: hardQuestions, display: "Hard" },
-   expert: { questions: expertQuestions, display: "Expert" }
+   expert: { questions: expertQuestions, display: "Expert"}
 };
 
 
