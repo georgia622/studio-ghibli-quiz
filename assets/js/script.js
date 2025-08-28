@@ -405,10 +405,12 @@ function checkAnswer(answer) {
 
 function showCorrectImage() {
    rightAnswerImage.classList.remove("hide");
+   wrongAnswerImage.classList.add("hide"); 
 }
 
 function showWrongImage() {
    wrongAnswerImage.classList.remove("hide");
+   rightAnswerImage.classList.add("hide");
 }
 
 
