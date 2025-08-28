@@ -257,6 +257,7 @@ function startGame() {
    welcomePage.classList.add("hide");
    gamePage.classList.remove("hide");
    validationError.classList.add("hide");
+   //questionTimer(levelSelect);
 }
 
 
@@ -291,7 +292,7 @@ function showQuestion(levelSelect) {
    nextButton.setAttribute("data-type", levelSelect);
    levelDisplay.innerHTML = level.display;
 
-   questionTimer(levelSelect);
+   
 }
 
 
@@ -510,6 +511,7 @@ nextButton.addEventListener("click", () => {
       let levelSelect = nextButton.getAttribute("data-type");
       showQuestion(levelSelect);
       addAnswerButton();
+      questionTimer(levelSelect);
    }
 });
 
