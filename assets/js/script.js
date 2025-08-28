@@ -34,7 +34,7 @@ const helpBtn = document.querySelector("#helpBtn");
 const timer = document.querySelector("#timer");
 
 let currentQuestionIndex = 0;
-let currentQuestion = " ";
+let currentQuestion;
 let timerInterval;
 
 const easyQuestions = [
@@ -387,27 +387,36 @@ function checkAnswer(answer) {
    }
 
    let correctAnswer = currentQuestion.answer;
-   let currentResponse = currentQuestion.response;
+   let explanation = currentQuestion.response;
 
    if (answer === correctAnswer) {
       displayQuestion.innerHTML = `That's correct, ${playerName.value}!`;
       updateScore();
       showCorrectImage();
    } else if (answer === "timeOut") {
-      displayQuestion.innerHTML = `Times up ${playerName.value}! the correct answer is ${correctAnswer}, ${currentResponse}`;
+      displayQuestion.innerHTML = `Time's up ${playerName.value}! The correct answer is ${correctAnswer}, ${explanation}`;
       showWrongImage();
    } else {
-      displayQuestion.innerHTML = `The correct answer is ${correctAnswer}, ${currentResponse}`;
+      displayQuestion.innerHTML = `The correct answer is ${correctAnswer}, ${explanation}`;
       showWrongImage();
    }
 }
 
 
+/**
+ * Displays the right answer image and hides the wrong answer 
+ * image to avoid both appearing.
+ */
 function showCorrectImage() {
    rightAnswerImage.classList.remove("hide");
    wrongAnswerImage.classList.add("hide"); 
 }
 
+
+/**
+ * Displays the wrong answer image and hides the right answer 
+ * image to avoid both appearing.
+ */
 function showWrongImage() {
    wrongAnswerImage.classList.remove("hide");
    rightAnswerImage.classList.add("hide");
@@ -428,8 +437,7 @@ function updateScore() {
  * display final score
  **/
 function finalScore() {
-   let finalScoreResult = score.innerHTML;
-   finalScoreDisplay.innerHTML = finalScoreResult;
+   finalScoreDisplay.innerHTML = score.innerHTML;
 }
 
 
@@ -459,7 +467,9 @@ function endGame() {
    expertBtnShow();
 }
 
-
+function timerColourChange() {
+   timer.classList.remove("colour-red");
+}
 
 startButton.addEventListener("click", (e) => {
    e.preventDefault();
@@ -488,7 +498,7 @@ nextButton.addEventListener("click", () => {
       endGame();
    } else {
       let levelSelect = nextButton.getAttribute("data-type");
-      timer.classList.remove("colour-red");
+      timerColourChange();
       showQuestion(levelSelect);
       addAnswerButton();
    }
@@ -520,18 +530,21 @@ endButton.addEventListener("click", () => {
    levelMessage.innerHTML = "Pick your path through the Ghibli world!";
    playerName.value = "";
    finishGame();
+   timerColourChange();
 });
 
 
 playAgainButton.addEventListener("click", () => {
    finishGame();
    levelMessage.innerHTML = `Choose Your Next Level ${playerName.value}!`;
+   timerColourChange();
 });
 
 
 homeButton.addEventListener("click", () => {
    finishGame();
    gamePage.classList.add("hide");
+   timerColourChange();
 });
 
 levelDifficulty.addEventListener("click", () => {
