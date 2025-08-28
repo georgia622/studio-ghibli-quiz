@@ -401,26 +401,35 @@ function checkAnswer(answer) {
 }
    */
 
-function checkAnswer(answer){
+function checkAnswer(answer) {
    if (timerInterval) {
       clearInterval(timerInterval);
    }
 
    let correctAnswer = currentQuestion.answer;
    let currentResponse = currentQuestion.response;
-   
-   if(answer === correctAnswer){
+
+   if (answer === correctAnswer) {
       displayQuestion.innerHTML = `That's correct, ${playerName.value}!`;
       updateScore();
+      showCorrectImage();
    } else if (answer === "timeOut") {
-       displayQuestion.innerHTML = `Times up! ${playerName.value}! the correct answer is {correctAnswer}, ${currentResponse}`;
+      displayQuestion.innerHTML = `Times up ${playerName.value}! the correct answer is ${correctAnswer}, ${currentResponse}`;
+      showWrongImage();
    } else {
-
+      displayQuestion.innerHTML = `The correct answer is ${correctAnswer}, ${currentResponse}`;
+      showWrongImage();
    }
-
 }
 
 
+function showCorrectImage() {
+   rightAnswerImage.classList.remove("hide");
+}
+
+function showWrongImage() {
+   wrongAnswerImage.classList.remove("hide");
+}
 
 
 
