@@ -380,7 +380,7 @@ function addAnswerButton() {
  * Checks answer and updates score if correct,
  * displays text with correct answer and why if incorrect,
  * @param {string} answer - The users selected answer "true" or "false"
-*/
+
 function checkAnswer(answer) {
    let questionAnswer = currentQuestion.answer;
 
@@ -399,6 +399,29 @@ function checkAnswer(answer) {
       displayQuestion.innerHTML = "The correct answer is" + " " + `${questionAnswer}` + ", " + `${currentQuestion.response}`;
    }
 }
+   */
+
+function checkAnswer(answer){
+   if (timerInterval) {
+      clearInterval(timerInterval);
+   }
+
+   let correctAnswer = currentQuestion.answer;
+   let currentResponse = currentQuestion.response;
+   
+   if(answer === correctAnswer){
+      displayQuestion.innerHTML = `That's correct, ${playerName.value}!`;
+      updateScore();
+   } else if (answer === "timeOut") {
+       displayQuestion.innerHTML = `Times up! ${playerName.value}! the correct answer is {correctAnswer}, ${currentResponse}`;
+   } else {
+
+   }
+
+}
+
+
+
 
 
 /**
