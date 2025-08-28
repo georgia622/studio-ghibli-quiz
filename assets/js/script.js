@@ -441,6 +441,7 @@ function finalScore() {
    finalScoreDisplay.innerHTML = score.innerHTML;
 }
 
+
 /**
  * Resets the game back to initial state,
  * Clears score, resets current question index, 
@@ -455,16 +456,13 @@ function resetGame() {
    wrongAnswerImage.classList.add("hide");
 }
 
+
 /**
  * Shows welcome page and hides thank you page.
  **/
 function finishGame() {
    thankYouPage.classList.add("hide");
    welcomePage.classList.remove("hide");
-   /*currentQuestionIndex = 0;
-   score.innerHTML = "0";
-   startButton.classList.add("hide");
-   addAnswerButton();*/
    resetGame();
 }
 
@@ -519,9 +517,6 @@ nextButton.addEventListener("click", () => {
 btnExpert.addEventListener("click", () => {
    thankYouPage.classList.add("hide");
    gamePage.classList.remove("hide");
-   /*currentQuestionIndex = 0;
-   score.innerHTML = "0";
-   addAnswerButton();*/
    resetGame();
 });
 
