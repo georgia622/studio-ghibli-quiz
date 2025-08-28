@@ -521,7 +521,10 @@ nextButton.addEventListener("click", () => {
 btnExpert.addEventListener("click", () => {
    thankYouPage.classList.add("hide");
    gamePage.classList.remove("hide");
+   levelSelect = "expert";
    resetGame();
+   showQuestion(levelSelect);
+   questionTimer(levelSelect);
 });
 
 levelButtons.forEach((button) => {
