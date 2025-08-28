@@ -441,7 +441,14 @@ function finalScore() {
    finalScoreDisplay.innerHTML = score.innerHTML;
 }
 
-
+function resetGame() {
+   currentQuestionIndex = 0;  
+   score.innerHTML = "0";       
+   startButton.classList.add("hide"); 
+   addAnswerButton();
+   rightAnswerImage.classList.add("hide");
+   wrongAnswerImage.classList.add("hide");
+}
 
 /**
  * Resets the game back to initial state,
@@ -450,10 +457,11 @@ function finalScore() {
 function finishGame() {
    thankYouPage.classList.add("hide");
    welcomePage.classList.remove("hide");
-   currentQuestionIndex = 0;
+   /*currentQuestionIndex = 0;
    score.innerHTML = "0";
    startButton.classList.add("hide");
-   addAnswerButton();
+   addAnswerButton();*/
+   resetGame();
 }
 
 
