@@ -441,6 +441,11 @@ function finalScore() {
    finalScoreDisplay.innerHTML = score.innerHTML;
 }
 
+/**
+ * Resets the game back to initial state,
+ * Clears score, resets current question index, 
+ * Hides images and adds buttons back
+ */
 function resetGame() {
    currentQuestionIndex = 0;  
    score.innerHTML = "0";       
@@ -451,8 +456,7 @@ function resetGame() {
 }
 
 /**
- * Resets the game back to initial state,
- * Clears score, resets current question index, shows welcome page
+ * Shows welcome page and hides thank you page.
  **/
 function finishGame() {
    thankYouPage.classList.add("hide");
@@ -515,9 +519,10 @@ nextButton.addEventListener("click", () => {
 btnExpert.addEventListener("click", () => {
    thankYouPage.classList.add("hide");
    gamePage.classList.remove("hide");
-   currentQuestionIndex = 0;
+   /*currentQuestionIndex = 0;
    score.innerHTML = "0";
-   addAnswerButton();
+   addAnswerButton();*/
+   resetGame();
 });
 
 levelButtons.forEach((button) => {
