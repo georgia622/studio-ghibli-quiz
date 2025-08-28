@@ -33,9 +33,12 @@ const helpContent = document.querySelector("#help-content");
 const helpBtn = document.querySelector("#helpBtn");
 const timer = document.querySelector("#timer");
 
+
+
 let currentQuestionIndex = 0;
 let currentQuestion;
 let timerInterval;
+let levelSelect;
 
 const easyQuestions = [
    {
@@ -257,7 +260,7 @@ function startGame() {
    welcomePage.classList.add("hide");
    gamePage.classList.remove("hide");
    validationError.classList.add("hide");
-   //questionTimer(levelSelect);
+   questionTimer(levelSelect);
 }
 
 
@@ -279,6 +282,7 @@ const levelQuestions = {
 };
 
 
+
 /**
  * Shows questions from the selected level
  * @param {string} levelSelect - The level difficulty
@@ -291,8 +295,6 @@ function showQuestion(levelSelect) {
    displayQuestion.innerHTML = currentQuestion.question;
    nextButton.setAttribute("data-type", levelSelect);
    levelDisplay.innerHTML = level.display;
-
-   
 }
 
 
@@ -524,7 +526,7 @@ btnExpert.addEventListener("click", () => {
 
 levelButtons.forEach((button) => {
    button.addEventListener("click", (e) => {
-      let levelSelect = e.target.getAttribute("data-type");
+      levelSelect = e.target.getAttribute("data-type");
       showQuestion(levelSelect);
       startButtonAdd();
    });
