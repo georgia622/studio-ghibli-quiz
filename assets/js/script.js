@@ -304,6 +304,7 @@ function questionTimer(levelSelect) {
    if (timerInterval) {
       clearInterval(timerInterval);
    }
+   timer.classList.remove("colour-red");
 
    const timeSelect = {
       easy: 20,
@@ -409,7 +410,7 @@ function checkAnswer(answer) {
  */
 function showCorrectImage() {
    rightAnswerImage.classList.remove("hide");
-   wrongAnswerImage.classList.add("hide"); 
+   wrongAnswerImage.classList.add("hide");
 }
 
 
@@ -467,9 +468,8 @@ function endGame() {
    expertBtnShow();
 }
 
-function timerColourChange() {
-   timer.classList.remove("colour-red");
-}
+
+
 
 startButton.addEventListener("click", (e) => {
    e.preventDefault();
@@ -498,7 +498,6 @@ nextButton.addEventListener("click", () => {
       endGame();
    } else {
       let levelSelect = nextButton.getAttribute("data-type");
-      timerColourChange();
       showQuestion(levelSelect);
       addAnswerButton();
    }
@@ -530,21 +529,18 @@ endButton.addEventListener("click", () => {
    levelMessage.innerHTML = "Pick your path through the Ghibli world!";
    playerName.value = "";
    finishGame();
-   timerColourChange();
 });
 
 
 playAgainButton.addEventListener("click", () => {
    finishGame();
    levelMessage.innerHTML = `Choose Your Next Level ${playerName.value}!`;
-   timerColourChange();
 });
 
 
 homeButton.addEventListener("click", () => {
    finishGame();
    gamePage.classList.add("hide");
-   timerColourChange();
 });
 
 levelDifficulty.addEventListener("click", () => {
